@@ -1,0 +1,45 @@
+@(employeeList:List[String],vendorList:List[String],message:String)(implicit session: play.api.mvc.Session)
+
+@main(title="Payments"){
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a href="@routes.EmployeeController.employee">Employee</a></li>
+
+            <li><a href="@routes.VendorController.vendor">Vendor</a></li>
+            <li><a href="@routes.PaymentController.payment">Payment</a></li>
+
+            <li><a href="@routes.PaymentController.reviewPayments">Review Payments</a></li>
+
+            <li><a href="@routes.LoginController.logout">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+body { padding-top: 100px; }
+<form action="@routes.PaymentController.addTransaction" method="post">
+    <div class="form-group">
+        <div class="col-xs-3">
+            <br>
+            <label>Select Vendor</label>
+            <select name="vendor" class="form-control">
+                @for(index<-0 until vendorList.size){
+                <option value="@vendorList(index)">@vendorList(index)</option>
+                }
+            </select>
+            <br>
+            <label>Amount</label>
+            <input name="amount" type="number" class="form-control">
+            <br>
+            <label>Description</label>
+            <input name="description" type="text" class="form-control">
+            <br>
+            <input type="submit" value="Submit" class="btn btn-default">
+            <br>
+            <br>
+            @message
+        </div>
+    </div>
+</form>
+<a href="@routes.LoginController.home">Home</a>
+
+}

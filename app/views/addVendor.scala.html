@@ -1,0 +1,37 @@
+@(message:String)(implicit session: play.api.mvc.Session)
+
+@main(title="Vendor") {
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a href="@routes.EmployeeController.employee">Employee</a></li>
+
+            <li><a href="@routes.VendorController.vendor">Vendor</a></li>
+            <li><a href="@routes.PaymentController.payment">Payment</a></li>
+
+            <li><a href="@routes.PaymentController.reviewPayments">Review Payments</a></li>
+
+            <li><a href="@routes.LoginController.logout">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+body { padding-top: 100px; }
+<form action="@routes.VendorController.addVendor()" method="post">
+    <div class="form-group">
+        <div class="col-xs-3">
+            <br>
+            <label>Name</label>
+            <input name="name" type="text" class="form-control">
+            <label>Phone</label>
+            <input name="phone" type="number" class="form-control">
+            <label>Address</label>
+            <input name="address" type="text" class="form-control">
+            <label>Description</label>
+            <input name="description" type="text" class="form-control">
+            <br>
+            <input name="submit" type="submit" class="btn btn-default">
+        </div>
+    </div>
+</form>
+
+}

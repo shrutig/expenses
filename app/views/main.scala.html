@@ -1,0 +1,18 @@
+@(title: String)(content: Html)
+
+
+
+<html lang="en">
+<link rel='stylesheet' href='@routes.WebJarAssets.at(WebJarAssets.locate("css/bootstrap.min.css"))'>
+
+<head>
+    <title>@title</title>
+
+
+</head>
+<body>
+
+@content
+</body>
+<script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))'></script>
+</html>

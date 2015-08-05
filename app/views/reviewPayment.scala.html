@@ -1,0 +1,50 @@
+@(userNames:List[String],payments:List[Payment])(implicit session: play.api.mvc.Session)
+
+@main(title="Review Payements"){
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a href="@routes.EmployeeController.employee">Employee</a></li>
+
+            <li><a href="@routes.VendorController.vendor">Vendor</a></li>
+            <li><a href="@routes.PaymentController.payment">Payment</a></li>
+
+            <li><a href="@routes.PaymentController.reviewPayments">Review Payments</a></li>
+
+            <li><a href="@routes.LoginController.logout">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+body { padding-top: 100px; }
+<table border="1">
+    <div class="table-hover">
+        <tr>
+            <td>Employee</td>
+            <td>Vendor</td>
+            <td>Amount</td>
+            <td>Description</td>
+        </tr>
+        @for(index <- 0 until payments.size){
+        <tr>
+            <td>@userNames(index)</td>
+            <td>@payments(index).vendor</td>
+            <td>@payments(index).amount</td>
+            <td>@payments(index).description</td>
+            <td>
+                <button name="@id(index)"  type="submit" formaction="@routes.PaymentController.approveTransaction"
+                        formmethod="post" value="Approve" class="btn btn-default"></button>
+            </td>
+            <td>
+                <button name="@id(index)" type="submit" formaction="@routes.PaymentController.denyTransaction"
+                        formmethod="post" value="Deny" class="btn btn-default"></button>
+            </td>
+        </tr>
+        }
+    </div>
+</table>
+<a href="@routes.PaymentController.getFile">Download CSV</a>
+<br><br>
+<a href="@routes.LoginController.home">Home</a>
+<br>
+<a href="@routes.LoginController.logout">logout</a>
+}

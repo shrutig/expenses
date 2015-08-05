@@ -1,0 +1,19 @@
+GET	/		controllers.LoginController.index
+GET     /home		controllers.LoginController.home
+GET     /employee	controllers.EmployeeController.employee
+GET     /vendor		controllers.VendorController.vendor
+GET     /pay		controllers.PaymentController.payment
+GET	/viewPay	controllers.PaymentController.reviewPayments
+GET	/logout		controllers.LoginController.logout
+GET	/getFile	controllers.PaymentController.getFile	
+
+POST    /authenticate	controllers.LoginController.authenticate
+POST	/employee   	controllers.EmployeeController.addEmployee
+POST    /vendor 	controllers.VendorController.addVendor
+POST	/pay		controllers.PaymentController.addTransaction
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET     /webjars/*file                    controllers.WebJarAssets.at(file)
+	
+
