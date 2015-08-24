@@ -1,11 +1,8 @@
 @(transactionList:List[PaymentReview])(implicit session: play.api.mvc.Session)
 
 @adminTemplate{
-
 <table border="1">
-
     <thead>
-
     <tr>
         <th>ID</th>
         <th>Employee</th>
@@ -26,15 +23,8 @@
                 <button class="btn btn-default">Approve</button>
             </form>
         </td>
-        <td>
-            <form action="@routes.PaymentController.denyTransaction(transactionList(index).id)" method="post">
-                <button class="btn btn-default">Deny</button>
-            </form>
-        </td>
-    </tr>
-
-    }
+        }
 
 </table>
-<a href="@routes.PaymentController.getFile">Download CSV</a>
+
 }

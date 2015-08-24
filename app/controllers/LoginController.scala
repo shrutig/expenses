@@ -1,5 +1,7 @@
 package controllers
 
+import java.sql.SQLException
+
 import models.User
 import play.api.Play.current
 import play.api.data.Form
@@ -23,16 +25,23 @@ object LoginController extends Controller {
     BadRequest(views.html.index("Enter Fields")))) { implicit request =>
     val userData = request.body
     val user = userData.name
+    print(user)
     val password = userData.password
     if (authenticateUser(user, password)) {
-      Ok(views.html.home("Welcome")).withSession("userType" -> role, "userName" -> user)
+      if (role == "user") Ok(views.html.userHome("")).withSession("userType" -> role, "userName" -> user)
+      else {
+        Ok(views.html.adminHome("")).withSession("userType" -> role, "userName" -> user)
+      }
     } else {
-      Ok(views.html.index("Enter correct details"))
+      Redirect("/")
     }
   }
 
   def home = Action { implicit request =>
-    Ok(views.html.home(""))
+    if (request.session("userType") == "user")
+      Ok(views.html.userHome(""))
+    else
+      Ok(views.html.adminHome(""))
   }
 
   def logout = Action {
@@ -52,6 +61,9 @@ object LoginController extends Controller {
         else false
       }
       else false
+    }
+    catch {
+      case e: SQLException => false
     }
     finally {
       conn.close()

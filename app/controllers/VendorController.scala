@@ -1,17 +1,19 @@
 package controllers
 
-import models.Vendor
+import models.{VendorName, Vendor}
 import play.api.data.Form
 import play.api.data.Forms._
 import play.api.db.DB
 import play.api.Play.current
 import play.api.mvc.{Action, Controller}
 
+import scala.collection.mutable.ListBuffer
+
 object VendorController extends Controller {
 
   def vendor = Action { implicit request =>
     val userType = request.session("userType")
-    if ((userType == "admin") || (userType == "super")) Ok(views.html.vendor(""))
+    if ((userType == "admin") || (userType == "super")) Ok(views.html.addVendor(""))
     else Redirect("/")
   }
 
@@ -35,18 +37,33 @@ object VendorController extends Controller {
     finally {
       conn.close()
     }
-    Ok(views.html.vendor(""))
+    Ok(views.html.addVendor(""))
   }
 
-  def listVendor = Action {
+  def viewDeleteVendor = Action { implicit request =>
+    var vendorList = new ListBuffer[String]
     val conn = DB.getConnection()
     try {
       val stmt = conn.createStatement()
+      val rs = stmt.executeQuery("select name from vendor;")
+      while (rs.next())
+        vendorList += rs.getString("name")
     }
-    finally {
-      conn.close()
-    }
-    Ok("")
+    finally conn.close()
+    Ok(views.html.deleteVendor(vendorList.toList))
+  }
+
+  val deleteVendorForm = Form(mapping("vendor" -> text)(VendorName.apply)(VendorName.unapply))
+
+  def deleteVendor = Action(parse.form(deleteVendorForm, onErrors = (withError: Form[VendorName]) =>
+    Redirect("/deleteVendor"))) { implicit request =>
+    val vendorName = request.body.name
+    val conn = DB.getConnection()
+    try {
+      val stmt = conn.createStatement()
+      stmt.execute("delete from vendor where name=\"" + vendorName + "\";")
+    } finally conn.close()
+    Redirect("/deleteVendor")
   }
 
 }

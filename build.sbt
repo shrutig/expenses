@@ -10,19 +10,15 @@ scalaVersion := "2.11.7"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
-
-
 libraryDependencies += jdbc
 
-libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.34"
+libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.36"
 
 libraryDependencies += "com.typesafe.play" % "anorm_2.10" % "2.4.0"
 
 libraryDependencies += "com.github.tototoshi" %% "scala-csv" % "1.2.2"
 
 libraryDependencies += evolutions
-
-routesGenerator := InjectedRoutesGenerator
 
 libraryDependencies += "org.webjars" % "webjars-play_2.10" % "2.4.0-1"
 

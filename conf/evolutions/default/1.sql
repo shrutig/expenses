@@ -2,13 +2,13 @@
 
 # --- !Ups
 
-CREATE TABLE employee (username varchar(20) PRIMARY KEY,password varchar(10),name varchar(20),phone int
+CREATE TABLE employee (username varchar(20) PRIMARY KEY,password varchar(10),name varchar(20),accountNo int,phone int
 ,email varchar(30),address varchar(20),role varchar(5));
 
 CREATE TABLE vendor (name varchar(20) PRIMARY KEY,phone int,address varchar(20),description varchar(30));
 
 CREATE TABLE expenses (id int  NOT NULL AUTO_INCREMENT PRIMARY KEY,username varchar(20),vendor varchar(20)
-,amount int);
+,amount int,status varchar(2),description varchar(20));
 
 # --- !Downs
 

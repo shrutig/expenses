@@ -1,19 +1,28 @@
 GET	/		controllers.LoginController.index
-GET     /home		controllers.LoginController.home
+POST    /authenticate	controllers.LoginController.authenticate
 GET     /employee	controllers.EmployeeController.employee
 GET     /vendor		controllers.VendorController.vendor
 GET     /pay		controllers.PaymentController.payment
-GET	/viewPay	controllers.PaymentController.reviewPayments
+GET	/reviewPay	controllers.PaymentController.reviewPayments
 GET	/logout		controllers.LoginController.logout
 GET	/getFile	controllers.PaymentController.getFile	
+GET	/editProfile	controllers.EmployeeController.editProfile
+GET	/changePassword	controllers.EmployeeController.changePassword
+GET	/deleteEmployee	controllers.EmployeeController.viewDeleteEmployee
+GET	/deleteVendor	controllers.VendorController.viewDeleteVendor
+GET	/deniedTransactions	controllers.PaymentController.viewDeniedTransactions
 
-POST    /authenticate	controllers.LoginController.authenticate
+
 POST	/employee   	controllers.EmployeeController.addEmployee
 POST    /vendor 	controllers.VendorController.addVendor
 POST	/pay		controllers.PaymentController.addTransaction
+POST	/deleteEmployee	controllers.EmployeeController.deleteEmployee
+POST	/deleteVendor	controllers.VendorController.deleteVendor
+POST	/updatePassword	controllers.EmployeeController.updatePassword
+POST	/updateProfile	controllers.EmployeeController.updateProfile
+POST	/approve/:id	controllers.PaymentController.approveTransaction(id:Int)
+POST	/deny/:id	controllers.PaymentController.denyTransaction(id:Int)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 GET     /webjars/*file                    controllers.WebJarAssets.at(file)
-	
-

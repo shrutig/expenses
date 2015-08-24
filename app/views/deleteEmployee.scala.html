@@ -1,0 +1,17 @@
+@(employeeList:List[String])(implicit session: play.api.mvc.Session)
+
+@adminTemplate{
+<form action="@routes.EmployeeController.deleteEmployee" method="post" class="form-group">
+    <br>
+    <div class="col-xs-3">
+        <br>
+        <label>Select Employee</label>
+        <select name="username" class="form-control">
+            @for(index<-0 until employeeList.size){
+            <option value="@employeeList(index)">@employeeList(index)</option>
+            }
+        </select>
+        <input type="submit" value="Delete" class="btn btn-default">
+    </div>
+</form>
+}

@@ -1,9 +1,11 @@
 @main(title="Edit Details"){
 
-<form action="@routes.EmployeeController.updateDetails">
+<form action="@routes.EmployeeController.updateProfile" method="post">
     <div class="form-group">
         <div class="col-xs-3">
             <br>
+            <label>Account no</label>
+            <input type="text" name="accountNo" class="form-control">
             <label>Phone</label>
             <input type="text" name="phone" class="form-control">
             <label>Email</label>

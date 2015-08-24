@@ -1,9 +1,13 @@
 @(message:String)
 
 @main(title="Home"){
-<h1>Welcome</h1>
 
-<form action="@routes.LoginController.authenticate" method="post" role="form">
+<div class="page-header">
+    <h1> Welcome</h1>
+</div>
+
+
+<form action="@routes.LoginController.authenticate" method="post">
     <div class="form-group">
         <div class="col-xs-3">
             <label>User Name</label>

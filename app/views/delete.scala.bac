@@ -1,7 +1,0 @@
-@(employeeList:List[String],vendorList[String])
-
-@main(title="Delete Records"){
-
-
-
-}

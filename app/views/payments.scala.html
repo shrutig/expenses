@@ -1,4 +1,4 @@
-@(employeeList:List[String],vendorList:List[String],message:String)(implicit session: play.api.mvc.Session)
+@(vendorList:List[String])(implicit session: play.api.mvc.Session)
 
 @main(title="Payments"){
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -36,10 +36,9 @@ body { padding-top: 100px; }
             <input type="submit" value="Submit" class="btn btn-default">
             <br>
             <br>
-            @message
         </div>
     </div>
 </form>
-<a href="@routes.LoginController.home">Home</a>
+
 
 }
