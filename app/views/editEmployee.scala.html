@@ -1,5 +1,5 @@
-@main(title="Edit Details"){
-
+@(message:String)(implicit session: play.api.mvc.Session)
+@template{
 <form action="@routes.EmployeeController.updateProfile" method="post">
     <div class="form-group">
         <div class="col-xs-3">
@@ -17,5 +17,7 @@
         </div>
     </div>
 </form>
+
+}
 
 }

@@ -1,6 +1,6 @@
 @(employeeList:List[String])(implicit session: play.api.mvc.Session)
 
-@adminTemplate{
+@template{
 <form action="@routes.EmployeeController.deleteEmployee" method="post" class="form-group">
     <br>
     <div class="col-xs-3">

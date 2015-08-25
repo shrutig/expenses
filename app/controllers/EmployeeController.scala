@@ -51,7 +51,23 @@ object EmployeeController extends Controller {
   }
 
   def editProfile = Action { implicit request =>
-    Ok(views.html.editEmployee())
+    val userName = request.session("userName")
+    val conn = DB.getConnection()
+    try {
+      val stmt = conn.createStatement()
+      val rs = stmt.executeQuery("select (accountNo,phone,email,address) from employee where username=\"" + userName + "\";")
+      rs.next()
+      val accountNo = rs.getInt("accountNo")
+      val phone = rs.getInt("phone")
+      val email = rs.getString("email")
+      val address = rs.getString("address")
+      val filledForm = updateEmployeeForm.fill(UpdateEmployee(accountNo, phone, email, address))
+    }
+    finally {
+      conn.close()
+    }
+
+    Ok(views.html.editEmployee(""))
   }
 
   val updateEmployeeForm = Form(mapping("accountNo" -> number, "phone" -> number, "email" -> text,
@@ -70,7 +86,7 @@ object EmployeeController extends Controller {
     finally {
       conn.close()
     }
-    Redirect("/userHome")
+    Redirect("/home")
   }
 
   val passwordForm = Form(mapping("currentPassword" -> text, "newPassword" -> text,
@@ -94,7 +110,7 @@ object EmployeeController extends Controller {
         if (changePass.newPassword == changePass.repeatPassword)
           stmt.execute("update employee set password=\"" + changePass.newPassword +
             "\" where username=\"" + userName + "\";")
-              }
+      }
     }
     finally conn.close()
     Ok(views.html.changePassword("Password Changed"))

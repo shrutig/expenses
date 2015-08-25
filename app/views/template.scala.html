@@ -1,0 +1,29 @@
+@(content:Html)(implicit session: play.api.mvc.Session)
+
+@main(title="Welcome"){
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            @if(session("userType")=="super"){
+            <li><a href="@routes.EmployeeController.employee">Add Employee</a></li>
+            <li><a href="@routes.EmployeeController.deleteEmployee">Delete Employee</a></li>
+            }
+            @if((session("userType")=="super")||(session("userType")=="admin")){
+            <li><a href="@routes.VendorController.vendor">Add Vendor</a></li>
+            <li><a href="@routes.VendorController.deleteVendor">Delete Vendor</a></li>
+            <li><a href="@routes.PaymentController.reviewPayments">Review Payments</a></li>
+            <li><a href="@routes.PaymentController.viewDeniedTransactions">Denied Payments</a></li>
+            }
+            <li><a href="@routes.PaymentController.payment">Payment</a></li>
+            <li><a href="@routes.EmployeeController.editProfile">Edit Profile</a></li>
+            <li><a href="@routes.EmployeeController.changePassword">Change Password</a></li>
+            <li><a href="@routes.LoginController.logout">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+<div>
+    @session
+</div>
+body { padding-top: 100px; }
+@content
+}

@@ -1,20 +1,6 @@
 @(vendorList:List[String])(implicit session: play.api.mvc.Session)
 
-@main(title="Payments"){
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <ul class="nav navbar-nav">
-            <li><a href="@routes.EmployeeController.employee">Employee</a></li>
-
-            <li><a href="@routes.VendorController.vendor">Vendor</a></li>
-            <li><a href="@routes.PaymentController.payment">Payment</a></li>
-
-            <li><a href="@routes.PaymentController.reviewPayments">Review Payments</a></li>
-
-            <li><a href="@routes.LoginController.logout">Logout</a></li>
-        </ul>
-    </div>
-</nav>
+@template{
 body { padding-top: 100px; }
 <form action="@routes.PaymentController.addTransaction" method="post">
     <div class="form-group">

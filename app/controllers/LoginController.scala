@@ -2,7 +2,7 @@ package controllers
 
 import java.sql.SQLException
 
-import models.User
+import models.{Navigation, User}
 import play.api.Play.current
 import play.api.data.Form
 import play.api.data.Forms._
@@ -15,7 +15,7 @@ object LoginController extends Controller {
 
 
   def index = Action {
-    Ok(views.html.index("Login"))
+    Ok(views.html.index("Login")).withNewSession
   }
 
   val userForm = Form(mapping("username" -> text, "password" -> text)(User.apply)(User.unapply))
@@ -28,24 +28,21 @@ object LoginController extends Controller {
     print(user)
     val password = userData.password
     if (authenticateUser(user, password)) {
-      if (role == "user") Ok(views.html.userHome("")).withSession("userType" -> role, "userName" -> user)
-      else {
-        Ok(views.html.adminHome("")).withSession("userType" -> role, "userName" -> user)
-      }
+      print("logged in")
+      println(role)
+      val session = Session(Map("userType" -> role, "userName" -> user))
+      Ok(views.html.home("")(session)).withSession(session)
     } else {
       Redirect("/")
     }
   }
 
   def home = Action { implicit request =>
-    if (request.session("userType") == "user")
-      Ok(views.html.userHome(""))
-    else
-      Ok(views.html.adminHome(""))
+    Ok(views.html.home("")).withSession(request.session)
   }
 
   def logout = Action {
-    Ok(views.html.index("Logged out")).withSession("userType" -> "clear")
+    Redirect("/").withNewSession
   }
 
   def authenticateUser(loginName: String, password: String): Boolean = {
@@ -69,7 +66,6 @@ object LoginController extends Controller {
       conn.close()
     }
   }
-
 
 }
 
