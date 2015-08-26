@@ -1,5 +1,5 @@
 GET	/		controllers.LoginController.index
-POST    /authenticate	controllers.LoginController.authenticate
+GET	/home		controllers.LoginController.home
 GET     /employee	controllers.EmployeeController.employee
 GET     /vendor		controllers.VendorController.vendor
 GET     /pay		controllers.PaymentController.payment
@@ -12,7 +12,7 @@ GET	/deleteEmployee	controllers.EmployeeController.viewDeleteEmployee
 GET	/deleteVendor	controllers.VendorController.viewDeleteVendor
 GET	/deniedTransactions	controllers.PaymentController.viewDeniedTransactions
 
-
+POST    /authenticate	controllers.LoginController.authenticate
 POST	/employee   	controllers.EmployeeController.addEmployee
 POST    /vendor 	controllers.VendorController.addVendor
 POST	/pay		controllers.PaymentController.addTransaction
