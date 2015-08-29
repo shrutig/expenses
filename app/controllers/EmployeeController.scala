@@ -52,6 +52,7 @@ object EmployeeController extends Controller {
 
   def editProfile = Action { implicit request =>
     val userName = request.session("userName")
+   /*
     val conn = DB.getConnection()
     try {
       val stmt = conn.createStatement()
@@ -66,6 +67,7 @@ object EmployeeController extends Controller {
     finally {
       conn.close()
     }
+    */
 
     Ok(views.html.editEmployee(""))
   }
