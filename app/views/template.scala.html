@@ -19,11 +19,7 @@
             <li><a href="@routes.EmployeeController.changePassword">Change Password</a></li>
             <li><a href="@routes.LoginController.logout">Logout</a></li>
         </ul>
+        @content
     </div>
 </nav>
-<div>
-    @session
-</div>
-body { padding-top: 100px; }
-@content
 }

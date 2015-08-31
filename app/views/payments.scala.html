@@ -1,7 +1,6 @@
 @(vendorList:List[String])(implicit session: play.api.mvc.Session)
 
 @template{
-body { padding-top: 100px; }
 <form action="@routes.PaymentController.addTransaction" method="post">
     <div class="form-group">
         <div class="col-xs-3">
