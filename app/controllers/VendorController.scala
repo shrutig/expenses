@@ -6,6 +6,7 @@ import play.api.data.Forms._
 import play.api.db.DB
 import play.api.Play.current
 import play.api.mvc.{Action, Controller}
+import views.html.helper
 
 import scala.collection.mutable.ListBuffer
 
@@ -17,11 +18,11 @@ object VendorController extends Controller {
     else Redirect("/")
   }
 
-  val vendorForm = Form(mapping("name" -> text, "phone" -> number,
+  val vendorForm = Form(mapping("name" -> text, "phone" -> number(min = 0),
     "address" -> text)(Vendor.apply)(Vendor.unapply))
 
   def addVendor = Action(parse.form(vendorForm, onErrors = (withError: Form[Vendor]) =>
-    BadRequest("/vendor"))) { implicit request =>
+    Redirect("/vendor"))) { implicit request =>
     val vendor = request.body
     /* DB.withConnection { implicit connection =>
        SQL("INSERT INTO vendor (name,phone,address) VALUES ({name},{phone},{address});").on("name" -> vendor.name,
@@ -37,7 +38,8 @@ object VendorController extends Controller {
     finally {
       conn.close()
     }
-    Ok(views.html.addVendor(""))
+
+    Ok(views.html.addVendor("Vendor Information Added"))
   }
 
   def viewDeleteVendor = Action { implicit request =>

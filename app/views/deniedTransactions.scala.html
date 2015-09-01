@@ -9,6 +9,7 @@
         <th>Vendor</th>
         <th>Amount</th>
         <th>Description</th>
+        <th>Denied by</th>
     </tr>
     </thead>
     @for(index <- 0 until transactionList.size){
@@ -18,6 +19,7 @@
         <td>@transactionList(index).vendor</td>
         <td>@transactionList(index).amount</td>
         <td>@transactionList(index).description</td>
+        <td>@transactionList(index).admin</td>
         <td>
             <form action="@routes.PaymentController.approveTransaction(transactionList(index).id)" method="post">
                 <button class="btn btn-default">Approve</button>

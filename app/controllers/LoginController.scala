@@ -13,7 +13,6 @@ import scala.collection.mutable.ListBuffer
 
 object LoginController extends Controller {
 
-
   def index = Action {
     Ok(views.html.index("Login")).withNewSession
   }

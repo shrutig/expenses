@@ -1,3 +1,5 @@
+//package com.tuplejump.expenses
+
 import play.api.GlobalSettings
 import play.api.mvc.{Handler, RequestHeader}
 
@@ -22,7 +24,7 @@ object Global extends GlobalSettings {
         else Some(controllers.LoginController.home)
       case ("GET", "/deleteVendor") =>
         val userType = request.session("userType")
-        if (userType == "super") super.onRouteRequest(request)
+        if ((userType == "super") || (userType == "admin")) super.onRouteRequest(request)
         else Some(controllers.LoginController.home)
       case ("GET", "/getFile") =>
         val userType = request.session("userType")
@@ -30,7 +32,7 @@ object Global extends GlobalSettings {
         else Some(controllers.LoginController.home)
       case ("GET", "/reviewPay") =>
         val userType = request.session("userType")
-        if (userType == "super") super.onRouteRequest(request)
+        if ((userType == "super") || (userType == "admin")) super.onRouteRequest(request)
         else Some(controllers.LoginController.home)
       case ("POST", "/approve") =>
         val userType = request.session("userType")

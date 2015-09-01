@@ -5,7 +5,6 @@
 <form action="@routes.EmployeeController.addEmployee()" method="post">
     <div class="form-group">
         <div class="col-xs-3">
-            <br>
             <label>Name</label>
             <input name="name" type="text" class="form-control">
             <label>User Name</label>
@@ -13,9 +12,9 @@
             <label>Password</label>
             <input name="password" type="password" class="form-control">
             <label>Account No.</label>
-            <input name="accountNo" type="number" class="form-control">
+            <input name="accountNo" type="number" class="form-control" min="0">
             <label>Phone</label>
-            <input name="phone" type="number" class="form-control">
+            <input name="phone" type="number" class="form-control" min="0">
             <label>Email</label>
             <input name="email" type="email" class="form-control">
             <label>Address</label>
@@ -28,6 +27,7 @@
             </select>
             <br>
             <input type="submit" name="Submit" class="form-control">
+            @message
         </div>
     </div>
 </form>

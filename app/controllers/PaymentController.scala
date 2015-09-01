@@ -43,10 +43,12 @@ object PaymentController extends Controller {
   }
 
   def denyTransaction(id: Int) = Action { implicit request =>
+    val adminName = request.session("userName")
     val conn = DB.getConnection()
     try {
       val stmt = conn.createStatement()
       stmt.execute("update expenses set status=\"D\" where id=" + id + ";")
+      stmt.execute("update expenses set admin=\"" + adminName + "\" where id=" + id + ";")
     }
     finally conn.close()
     Redirect("/reviewPay")
@@ -75,7 +77,7 @@ object PaymentController extends Controller {
       val rs = stmt.executeQuery("select * from expenses where status=\"U\";")
       while (rs.next()) {
         val p1 = PaymentReview(rs.getInt("id"), rs.getString("username"), rs.getString("vendor"),
-          rs.getInt("amount"), rs.getString("description"))
+          rs.getInt("amount"), rs.getString("description"),rs.getString("admin"))
         payments += p1
       }
     }
@@ -93,7 +95,7 @@ object PaymentController extends Controller {
       val rs = stmt.executeQuery("select * from expenses where status=\"D\";")
       while (rs.next()) {
         val p1 = PaymentReview(rs.getInt("id"), rs.getString("username"), rs.getString("vendor"),
-          rs.getInt("amount"), rs.getString("description"))
+          rs.getInt("amount"), rs.getString("description"),rs.getString("admin"))
         payments += p1
       }
     }

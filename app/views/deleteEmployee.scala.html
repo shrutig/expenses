@@ -2,9 +2,7 @@
 
 @template{
 <form action="@routes.EmployeeController.deleteEmployee" method="post" class="form-group">
-    <br>
     <div class="col-xs-3">
-        <br>
         <label>Select Employee</label>
         <select name="username" class="form-control">
             @for(index<-0 until employeeList.size){

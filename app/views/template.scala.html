@@ -1,8 +1,8 @@
 @(content:Html)(implicit session: play.api.mvc.Session)
 
 @main(title="Welcome"){
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
+<div class="container-fluid">
+    <nav class="navbar navbar-default navbar-static-top">
         <ul class="nav navbar-nav">
             @if(session("userType")=="super"){
             <li><a href="@routes.EmployeeController.employee">Add Employee</a></li>
@@ -19,7 +19,10 @@
             <li><a href="@routes.EmployeeController.changePassword">Change Password</a></li>
             <li><a href="@routes.LoginController.logout">Logout</a></li>
         </ul>
-        @content
-    </div>
-</nav>
+        <br>
+
+    </nav>
+    @content
+</div>
+
 }

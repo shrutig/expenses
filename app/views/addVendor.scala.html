@@ -4,17 +4,17 @@
 <form action="@routes.VendorController.addVendor()" method="post">
     <div class="form-group">
         <div class="col-xs-3">
-            <br>
             <label>Name</label>
             <input name="name" type="text" class="form-control">
             <label>Phone</label>
-            <input name="phone" type="number" class="form-control">
+            <input name="phone" type="number" class="form-control" min="0">
             <label>Address</label>
             <input name="address" type="text" class="form-control">
             <label>Description</label>
             <input name="description" type="text" class="form-control">
             <br>
             <input name="submit" type="submit" class="btn btn-default">
+            @message
         </div>
     </div>
 </form>
