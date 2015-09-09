@@ -3,6 +3,7 @@
 
 <html lang="en">
 <link rel='stylesheet' href='@routes.WebJarAssets.at(WebJarAssets.locate("css/bootstrap.min.css"))'>
+<script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))'></script>
 
 <head>
     <title>@title</title>
@@ -10,5 +11,5 @@
 <body>
 @content
 </body>
-<script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))'></script>
+<script type='text/javascript' src='@routes.Assets.versioned("javascripts/hello.js")'></script>
 </html>

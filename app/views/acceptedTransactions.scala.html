@@ -1,6 +1,8 @@
-@(transactionList:List[PaymentReview])(implicit session: play.api.mvc.Session)
+@(transactionList:List[PaymentReview],message:String)(implicit session: play.api.mvc.Session)
 
 @template{
+<h1>Accepted Transactions</h1>
+@message
 <table class="table table-condensed">
     <thead>
     <tr>
@@ -19,7 +21,8 @@
         <td>@transactionList(index).amount</td>
         <td>@transactionList(index).description</td>
         <td>
-            <form action="@routes.PaymentController.processTransaction(transactionList(index).id)" method="post">
+            <form action="@routes.PaymentController.processTransaction(transactionList(index).id)" enctype =
+            "multipart/form-data" method="post">
 
                     <input name="receipt" type="file" class="upload">
                     <input type="submit" name="Processed" class="upload">
@@ -29,5 +32,5 @@
         }
 
 </table>
-<a href="@routes.PaymentController.getFile">Download CSV</a>
+<a href="@routes.PaymentController.getFile">Download CSV of Accepted Payments</a>
 }

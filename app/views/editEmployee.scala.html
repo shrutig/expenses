@@ -19,6 +19,7 @@
 <!--</form>-->
 @helper.form(action=routes.EmployeeController.updateProfile){
 @message
+<h1>Edit Profile</h1>
 <div class="form-group">
     <div class="col-xs-3">
         @helper.inputText(profileData("accountNo"),args='class->"form-control",'_label->"Account No")

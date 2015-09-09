@@ -1,6 +1,7 @@
 @(message:String)(implicit session: play.api.mvc.Session)
 
 @template{
+<h1>Add Vendor</h1>
 <form action="@routes.VendorController.addVendor()" method="post">
     <div class="form-group">
         <div class="col-xs-3">

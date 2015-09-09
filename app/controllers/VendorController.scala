@@ -17,7 +17,7 @@ object VendorController extends Controller {
   }
 
   val vendorForm = Form(mapping("name" -> text, "phone" -> number(min = 0),
-    "address" -> text)(Vendor.apply)(Vendor.unapply))
+    "address" -> text, "description" -> text)(Vendor.apply)(Vendor.unapply))
 
   def addVendor = Action(parse.form(vendorForm, onErrors = (withError: Form[Vendor]) =>
     Redirect("/vendor"))) { implicit request =>
@@ -41,18 +41,18 @@ object VendorController extends Controller {
   }
 
   def viewDeleteVendor = Action { implicit request =>
-   val vendorList = getListVendors
-      Ok(views.html.deleteVendor(vendorList.toList,""))
+      Ok(views.html.deleteVendor(getListVendors.toList,""))
   }
 
-  def getListVendors:ListBuffer[String] = {
-    var vendorList = new ListBuffer[String]
+  def getListVendors:ListBuffer[Vendor] = {
+    var vendorList = new ListBuffer[Vendor]
     val conn = DB.getConnection()
     try {
       val stmt = conn.createStatement()
-      val rs = stmt.executeQuery("select name from vendor;")
+      val rs = stmt.executeQuery("select name,phone,address,description from vendor;")
       while (rs.next())
-        vendorList += rs.getString("name")
+        vendorList += Vendor(rs.getString("name"),rs.getInt("phone"),
+          rs.getString("address"),rs.getString("description"))
     }
     finally conn.close()
     vendorList

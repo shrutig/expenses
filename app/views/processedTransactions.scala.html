@@ -1,6 +1,7 @@
 @(transactionList:List[PaymentReview])(implicit session: play.api.mvc.Session)
 
 @template{
+<h1>Processed Transactions</h1>
 <table class="table table-condensed">
     <thead>
     <tr>
@@ -18,6 +19,7 @@
         <td>@transactionList(index).vendor</td>
         <td>@transactionList(index).amount</td>
         <td>@transactionList(index).description</td>
+        <td><a href ="@routes.PaymentController.getReceipt(transactionList(index).fileName)">Download receipt</a></td>
         }
 
 </table>

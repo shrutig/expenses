@@ -62,20 +62,20 @@ object PaymentController extends Controller {
   }
 
   def processTransaction(id: Int) = Action(parse.multipartFormData) {  implicit request =>
+    var fileName:String = null
     request.body.file("receipt").map { receipt =>
-      val receiptFilename = receipt.filename
-      val contentType = receipt.contentType.get
-      receipt.ref.moveTo(new File( "public/receipts"+receipt.filename))
+      receipt.ref.moveTo(new File( "public/receipts/"+receipt.filename))
+      fileName = receipt.filename
     }.getOrElse {
-      Redirect("/acceptedTransactions")
+      Ok(views.html.acceptedTransactions(getAcceptedPayments.toList,"File could not be uploaded"))
     }
     val conn = DB.getConnection()
     try {
       val stmt = conn.createStatement()
-      stmt.execute("update expenses set status=\"P\" where id=" + id + ";")
+      stmt.execute("update expenses set status=\"P\" , fileName=\"" + fileName + "\" where id=" + id + ";")
     }
     finally conn.close()
-    Ok("File has been uploaded")
+    Ok(views.html.acceptedTransactions(getAcceptedPayments.toList,"File has been uploaded"))
   }
 
 
@@ -87,7 +87,7 @@ object PaymentController extends Controller {
       val rs = stmt.executeQuery("select * from expenses where status=\"U\";")
       while (rs.next()) {
         val p1 = PaymentReview(rs.getInt("id"), rs.getString("username"), rs.getString("vendor"),
-          rs.getInt("amount"), rs.getString("description"), rs.getString("admin"))
+          rs.getInt("amount"), rs.getString("description"), rs.getString("admin"),rs.getString("fileName"))
         payments += p1
       }
     }
@@ -105,7 +105,7 @@ object PaymentController extends Controller {
       val rs = stmt.executeQuery("select * from expenses where status=\"D\";")
       while (rs.next()) {
         val p1 = PaymentReview(rs.getInt("id"), rs.getString("username"), rs.getString("vendor"),
-          rs.getInt("amount"), rs.getString("description"), rs.getString("admin"))
+          rs.getInt("amount"), rs.getString("description"), rs.getString("admin"),rs.getString("fileName"))
         payments += p1
       }
     }
@@ -116,6 +116,10 @@ object PaymentController extends Controller {
   }
 
   def viewAcceptedTransactions = Action { implicit request =>
+    Ok(views.html.acceptedTransactions(getAcceptedPayments.toList,""))
+  }
+
+  def getAcceptedPayments = {
     var payments = new ListBuffer[PaymentReview]
     val conn = DB.getConnection()
     try {
@@ -123,14 +127,14 @@ object PaymentController extends Controller {
       val rs = stmt.executeQuery("select * from expenses where status=\"A\";")
       while (rs.next()) {
         val p1 = PaymentReview(rs.getInt("id"), rs.getString("username"), rs.getString("vendor"),
-          rs.getInt("amount"), rs.getString("description"), rs.getString("admin"))
+          rs.getInt("amount"), rs.getString("description"), rs.getString("admin"),rs.getString("fileName"))
         payments += p1
       }
     }
     finally {
       conn.close()
     }
-    Ok(views.html.acceptedTransactions(payments.toList))
+    payments
   }
 
   def viewProcessedTransactions = Action { implicit request =>
@@ -141,7 +145,7 @@ object PaymentController extends Controller {
       val rs = stmt.executeQuery("select * from expenses where status=\"P\";")
       while (rs.next()) {
         val p1 = PaymentReview(rs.getInt("id"), rs.getString("username"), rs.getString("vendor"),
-          rs.getInt("amount"), rs.getString("description"), rs.getString("admin"))
+          rs.getInt("amount"), rs.getString("description"), rs.getString("admin"),rs.getString("fileName"))
         payments += p1
       }
     }
@@ -173,4 +177,9 @@ object PaymentController extends Controller {
     }
     Ok.sendFile(new File("expenses.csv"))
   }
+
+  def getReceipt(fileName: String) = Action { implicit request =>
+    Ok.sendFile(new File("public/receipts/"+fileName))
+  }
+
 }

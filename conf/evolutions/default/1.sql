@@ -8,7 +8,7 @@ CREATE TABLE employee (username varchar(20) PRIMARY KEY,password varchar(10),nam
 CREATE TABLE vendor (name varchar(20) PRIMARY KEY,phone int,address varchar(20),description varchar(30));
 
 CREATE TABLE expenses (id int  NOT NULL AUTO_INCREMENT PRIMARY KEY,username varchar(20),vendor varchar(20)
-,amount int,status varchar(2),description varchar(20));
+,amount int,status varchar(2),description varchar(20),admin varchar(15), fileName varchar(15));
 
 INSERT INTO employee VALUES('super1','super1','super',1234,1234,'super@tuplejump.com','asd','super')
 # --- !Downs

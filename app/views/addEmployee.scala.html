@@ -1,6 +1,7 @@
 @(message:String)(implicit session: play.api.mvc.Session)
 
 @template{
+<h1>Add Employee</h1>
 <form action="@routes.EmployeeController.addEmployee()" method="post">
     <div class="form-group">
         <div class="col-xs-3">
