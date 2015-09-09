@@ -13,9 +13,7 @@ import scala.collection.mutable.ListBuffer
 object VendorController extends Controller {
 
   def vendor = Action { implicit request =>
-    val userType = request.session("userType")
-    if ((userType == "admin") || (userType == "super")) Ok(views.html.addVendor(""))
-    else Redirect("/")
+     Ok(views.html.addVendor(""))
   }
 
   val vendorForm = Form(mapping("name" -> text, "phone" -> number(min = 0),
@@ -44,11 +42,7 @@ object VendorController extends Controller {
 
   def viewDeleteVendor = Action { implicit request =>
    val vendorList = getListVendors
-    val userType = request.session("userType")
-    if ((userType == "admin") || (userType == "super"))
       Ok(views.html.deleteVendor(vendorList.toList,""))
-    else
-      Redirect("/")
   }
 
   def getListVendors:ListBuffer[String] = {

@@ -19,7 +19,12 @@
         <td>@transactionList(index).amount</td>
         <td>@transactionList(index).description</td>
         <td>
+            <form action="@routes.PaymentController.processTransaction(transactionList(index).id)" method="post">
 
+                    <input name="receipt" type="file" class="upload">
+                    <input type="submit" name="Processed" class="upload">
+
+            </form>
         </td>
         }
 

@@ -8,7 +8,8 @@ import play.api.Play.current
 import play.api.data.Form
 import play.api.data.Forms._
 import play.api.db.DB
-import play.api.mvc.{Action, Controller}
+import play.api.mvc.MultipartFormData.FilePart
+import play.api.mvc.{MultipartFormData, Action, Controller}
 
 import scala.collection.mutable.ListBuffer
 
@@ -29,12 +30,12 @@ object PaymentController extends Controller {
         payment.vendor + "\"," + payment.amount + ",\"U\",\"" + payment.description + "\");")
     }
     finally conn.close()
-    Ok(views.html.payments(VendorController.getListVendors toList,"Transaction with "+payment.vendor+" of Rs " +
-      payment.amount+  " added"))
+    Ok(views.html.payments(VendorController.getListVendors toList, "Transaction with " + payment.vendor + " of Rs " +
+      payment.amount + " added"))
   }
 
   def payment = Action { implicit request =>
-    Ok(views.html.payments(VendorController.getListVendors toList,""))
+    Ok(views.html.payments(VendorController.getListVendors toList, ""))
   }
 
 
@@ -60,6 +61,24 @@ object PaymentController extends Controller {
     Redirect("/reviewPay")
   }
 
+  def processTransaction(id: Int) = Action(parse.multipartFormData) {  implicit request =>
+    request.body.file("receipt").map { receipt =>
+      val receiptFilename = receipt.filename
+      val contentType = receipt.contentType.get
+      receipt.ref.moveTo(new File( "public/receipts"+receipt.filename))
+    }.getOrElse {
+      Redirect("/acceptedTransactions")
+    }
+    val conn = DB.getConnection()
+    try {
+      val stmt = conn.createStatement()
+      stmt.execute("update expenses set status=\"P\" where id=" + id + ";")
+    }
+    finally conn.close()
+    Ok("File has been uploaded")
+  }
+
+
   def reviewPayments = Action { implicit request =>
     var payments = new ListBuffer[PaymentReview]
     val conn = DB.getConnection()
@@ -68,7 +87,7 @@ object PaymentController extends Controller {
       val rs = stmt.executeQuery("select * from expenses where status=\"U\";")
       while (rs.next()) {
         val p1 = PaymentReview(rs.getInt("id"), rs.getString("username"), rs.getString("vendor"),
-          rs.getInt("amount"), rs.getString("description"),rs.getString("admin"))
+          rs.getInt("amount"), rs.getString("description"), rs.getString("admin"))
         payments += p1
       }
     }
@@ -86,7 +105,7 @@ object PaymentController extends Controller {
       val rs = stmt.executeQuery("select * from expenses where status=\"D\";")
       while (rs.next()) {
         val p1 = PaymentReview(rs.getInt("id"), rs.getString("username"), rs.getString("vendor"),
-          rs.getInt("amount"), rs.getString("description"),rs.getString("admin"))
+          rs.getInt("amount"), rs.getString("description"), rs.getString("admin"))
         payments += p1
       }
     }
@@ -104,7 +123,7 @@ object PaymentController extends Controller {
       val rs = stmt.executeQuery("select * from expenses where status=\"A\";")
       while (rs.next()) {
         val p1 = PaymentReview(rs.getInt("id"), rs.getString("username"), rs.getString("vendor"),
-          rs.getInt("amount"), rs.getString("description"),rs.getString("admin"))
+          rs.getInt("amount"), rs.getString("description"), rs.getString("admin"))
         payments += p1
       }
     }
@@ -122,7 +141,7 @@ object PaymentController extends Controller {
       val rs = stmt.executeQuery("select * from expenses where status=\"P\";")
       while (rs.next()) {
         val p1 = PaymentReview(rs.getInt("id"), rs.getString("username"), rs.getString("vendor"),
-          rs.getInt("amount"), rs.getString("description"),rs.getString("admin"))
+          rs.getInt("amount"), rs.getString("description"), rs.getString("admin"))
         payments += p1
       }
     }

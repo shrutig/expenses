@@ -13,11 +13,7 @@ import scala.collection.mutable.ListBuffer
 object EmployeeController extends Controller {
 
   def employee = Action { implicit request =>
-    val userType = request.session("userType")
-    if (userType == "super")
       Ok(views.html.addEmployee(""))
-    else
-      Redirect("/")
   }
 
   val employeeForm = Form(mapping("name" -> text, "username" -> text, "password" -> text,
@@ -104,11 +100,7 @@ object EmployeeController extends Controller {
   }
 
   def viewDeleteEmployee = Action { implicit request =>
-    val userType = request.session("userType")
-    if (userType == "super")
       Ok(views.html.deleteEmployee(getEmployeeList.toList, ""))
-    else
-      Redirect("/")
   }
 
   val deleteEmployeeForm = Form(mapping("username" -> text)(EmployeeName.apply)(EmployeeName.unapply))

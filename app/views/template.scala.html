@@ -14,13 +14,13 @@
             }
             @if(session("userType")=="super"){
             <li><a href="@routes.PaymentController.reviewPayments">Review Payments</a></li>
+            <li><a href="@routes.PaymentController.viewDeniedTransactions">Denied Payments</a></li>
             }
             @if((session("userType")=="super")||(session("userType")=="admin")){
             <li><a href="@routes.PaymentController.viewAcceptedTransactions">Accepted Payments</a></li>
-            <li><a href="@routes.PaymentController.viewDeniedTransactions">Denied Payments</a></li>
             <li><a href="@routes.PaymentController.viewProcessedTransactions">Processed Payments</a></li>
             }
-            <li><a href="@routes.PaymentController.payment">Make Payment</a></li>
+            <li><a href="@routes.PaymentController.payment">Payment</a></li>
             <li><a href="@routes.EmployeeController.editProfile">Edit Profile</a></li>
             <li><a href="@routes.EmployeeController.changePassword">Change Password</a></li>
             <li><a href="@routes.LoginController.logout">Logout</a></li>
