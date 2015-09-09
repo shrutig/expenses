@@ -1,4 +1,4 @@
-@(employeeList:List[String])(implicit session: play.api.mvc.Session)
+@(employeeList:List[String],message:String)(implicit session: play.api.mvc.Session)
 
 @template{
 <form action="@routes.EmployeeController.deleteEmployee" method="post" class="form-group">
@@ -11,6 +11,7 @@
         </select>
         <br>
         <input type="submit" value="Delete" class="btn btn-default">
+        @message
     </div>
 </form>
 }

@@ -1,4 +1,4 @@
-@(vendorList:List[String])(implicit session: play.api.mvc.Session)
+@(vendorList:List[String], message: String)(implicit session: play.api.mvc.Session)
 
 @template{
 <form action="@routes.PaymentController.addTransaction" method="post">
@@ -20,6 +20,7 @@
             <input type="submit" value="Submit" class="btn btn-default">
             <br>
             <br>
+            @message
         </div>
     </div>
 </form>

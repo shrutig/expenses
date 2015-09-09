@@ -1,11 +1,8 @@
 @(transactionList:List[PaymentReview])(implicit session: play.api.mvc.Session)
 
 @template{
-
 <table class="table table-condensed">
-
     <thead>
-
     <tr>
         <th>ID</th>
         <th>Employee</th>
@@ -22,18 +19,10 @@
         <td>@transactionList(index).amount</td>
         <td>@transactionList(index).description</td>
         <td>
-            <form action="@routes.PaymentController.approveTransaction(transactionList(index).id)" method="post">
-                <button class="btn btn-default">Approve</button>
-            </form>
-        </td>
-        <td>
-            <form action="@routes.PaymentController.denyTransaction(transactionList(index).id)" method="post">
-                <button class="btn btn-default">Deny</button>
-            </form>
-        </td>
-    </tr>
 
-    }
+        </td>
+        }
 
 </table>
+<a href="@routes.PaymentController.getFile">Download CSV</a>
 }

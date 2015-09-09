@@ -19,7 +19,7 @@ object PaymentController extends Controller {
     (PaymentForm.apply)(PaymentForm.unapply))
 
   def addTransaction = Action(parse.form(paymentForm, onErrors = (withErrors: Form[PaymentForm]) =>
-    BadRequest("/pay"))) { implicit request =>
+    Redirect("/pay"))) { implicit request =>
     val payment = request.body
     val user = request.session("userName")
     val conn = DB.getConnection()
@@ -29,8 +29,14 @@ object PaymentController extends Controller {
         payment.vendor + "\"," + payment.amount + ",\"U\",\"" + payment.description + "\");")
     }
     finally conn.close()
-    Redirect("/pay")
+    Ok(views.html.payments(VendorController.getListVendors toList,"Transaction with "+payment.vendor+" of Rs " +
+      payment.amount+  " added"))
   }
+
+  def payment = Action { implicit request =>
+    Ok(views.html.payments(VendorController.getListVendors toList,""))
+  }
+
 
   def approveTransaction(id: Int) = Action { implicit request =>
     val conn = DB.getConnection()
@@ -52,21 +58,6 @@ object PaymentController extends Controller {
     }
     finally conn.close()
     Redirect("/reviewPay")
-  }
-
-  def payment = Action { implicit request =>
-    var vendorList = new ListBuffer[String]
-    val conn = DB.getConnection()
-    try {
-      val stmt = conn.createStatement()
-      val vendorSet = stmt.executeQuery("select name from vendor;")
-      while (vendorSet.next())
-        vendorList += vendorSet.getString("name")
-    }
-    finally {
-      conn.close()
-    }
-    Ok(views.html.payments(vendorList.toList))
   }
 
   def reviewPayments = Action { implicit request =>
@@ -104,6 +95,43 @@ object PaymentController extends Controller {
     }
     Ok(views.html.deniedTransactions(payments.toList))
   }
+
+  def viewAcceptedTransactions = Action { implicit request =>
+    var payments = new ListBuffer[PaymentReview]
+    val conn = DB.getConnection()
+    try {
+      val stmt = conn.createStatement()
+      val rs = stmt.executeQuery("select * from expenses where status=\"A\";")
+      while (rs.next()) {
+        val p1 = PaymentReview(rs.getInt("id"), rs.getString("username"), rs.getString("vendor"),
+          rs.getInt("amount"), rs.getString("description"),rs.getString("admin"))
+        payments += p1
+      }
+    }
+    finally {
+      conn.close()
+    }
+    Ok(views.html.acceptedTransactions(payments.toList))
+  }
+
+  def viewProcessedTransactions = Action { implicit request =>
+    var payments = new ListBuffer[PaymentReview]
+    val conn = DB.getConnection()
+    try {
+      val stmt = conn.createStatement()
+      val rs = stmt.executeQuery("select * from expenses where status=\"P\";")
+      while (rs.next()) {
+        val p1 = PaymentReview(rs.getInt("id"), rs.getString("username"), rs.getString("vendor"),
+          rs.getInt("amount"), rs.getString("description"),rs.getString("admin"))
+        payments += p1
+      }
+    }
+    finally {
+      conn.close()
+    }
+    Ok(views.html.processedTransactions(payments.toList))
+  }
+
 
   def getFile = Action { implicit request =>
     var payments = new ListBuffer[PaymentForm]

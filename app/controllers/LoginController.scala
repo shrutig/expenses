@@ -27,7 +27,7 @@ object LoginController extends Controller {
     print(user)
     val password = userData.password
     if (authenticateUser(user, password)) {
-      print("logged in")
+      print("logged in ")
       println(role)
       val session = Session(Map("userType" -> role, "userName" -> user))
       Ok(views.html.home("")(session)).withSession(session)

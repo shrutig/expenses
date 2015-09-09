@@ -1,4 +1,4 @@
-@(vendorList:List[String])(implicit session: play.api.mvc.Session)
+@(vendorList:List[String],message:String)(implicit session: play.api.mvc.Session)
 
 @template{
 <form action="@routes.VendorController.deleteVendor" method="post">
@@ -12,6 +12,7 @@
             </select>
             <br>
             <input type="submit" value="Delete" class="btn btn-default">
+            @message
         </div>
     </div>
 </form>

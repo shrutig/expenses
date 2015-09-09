@@ -11,6 +11,8 @@ GET	/changePassword	controllers.EmployeeController.changePassword
 GET	/deleteEmployee	controllers.EmployeeController.viewDeleteEmployee
 GET	/deleteVendor	controllers.VendorController.viewDeleteVendor
 GET	/deniedTransactions	controllers.PaymentController.viewDeniedTransactions
+GET /acceptedTransactions controllers.PaymentController.viewAcceptedTransactions
+GET /processedTransactions controllers.PaymentController.viewProcessedTransactions
 
 POST    /authenticate	controllers.LoginController.authenticate
 POST	/employee   	controllers.EmployeeController.addEmployee

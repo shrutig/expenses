@@ -39,10 +39,19 @@ object VendorController extends Controller {
       conn.close()
     }
 
-    Ok(views.html.addVendor("Vendor Information Added"))
+    Ok(views.html.addVendor("Vendor Information of "+vendor.name+" Added"))
   }
 
   def viewDeleteVendor = Action { implicit request =>
+   val vendorList = getListVendors
+    val userType = request.session("userType")
+    if ((userType == "admin") || (userType == "super"))
+      Ok(views.html.deleteVendor(vendorList.toList,""))
+    else
+      Redirect("/")
+  }
+
+  def getListVendors:ListBuffer[String] = {
     var vendorList = new ListBuffer[String]
     val conn = DB.getConnection()
     try {
@@ -52,7 +61,7 @@ object VendorController extends Controller {
         vendorList += rs.getString("name")
     }
     finally conn.close()
-    Ok(views.html.deleteVendor(vendorList.toList))
+    vendorList
   }
 
   val deleteVendorForm = Form(mapping("vendor" -> text)(VendorName.apply)(VendorName.unapply))
@@ -65,7 +74,7 @@ object VendorController extends Controller {
       val stmt = conn.createStatement()
       stmt.execute("delete from vendor where name=\"" + vendorName + "\";")
     } finally conn.close()
-    Redirect("/deleteVendor")
+    Ok(views.html.deleteVendor(getListVendors.toList,"Vendor "+vendorName+" deleted"))
   }
 
 }
