@@ -96,7 +96,7 @@ object EmployeeController extends Controller {
       val stmt = conn.createStatement()
       val rs = stmt.executeQuery("select * from employee;")
       while (rs.next())
-        employeeList += models.Employee(rs.getString("user"),rs.getString("username"),rs.getString("password"),rs.getInt
+        employeeList += models.Employee(rs.getString("name"),rs.getString("userName"),rs.getString("password"),rs.getInt
           ("accountNo"),
           rs.getInt("phone"),rs.getString("email"),rs.getString("address"),rs.getString("role"))
     }
@@ -119,7 +119,7 @@ object EmployeeController extends Controller {
       stmt.execute("delete from employee where username=\"" + userName + "\";")
     }
     finally conn.close()
-    Ok(views.html.deleteEmployee(getEmployeeList.toList, "Employee " + userName + " deleted"))
+    Ok(views.html.deleteEmployee(getEmployeeList.toList, userName + " deleted"))
   }
 
 }

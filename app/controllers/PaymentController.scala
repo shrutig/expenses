@@ -1,6 +1,9 @@
 package controllers
 
 import java.io.File
+import java.sql.Statement
+import java.text.SimpleDateFormat
+import java.util.{Date, Calendar}
 
 import com.github.tototoshi.csv.CSVWriter
 import models.{PaymentReview, PaymentForm}
@@ -8,8 +11,7 @@ import play.api.Play.current
 import play.api.data.Form
 import play.api.data.Forms._
 import play.api.db.DB
-import play.api.mvc.MultipartFormData.FilePart
-import play.api.mvc.{MultipartFormData, Action, Controller}
+import play.api.mvc.{ Action, Controller}
 
 import scala.collection.mutable.ListBuffer
 
@@ -24,12 +26,16 @@ object PaymentController extends Controller {
     val payment = request.body
     val user = request.session("userName")
     val conn = DB.getConnection()
+    var stmt:Statement = null
     try {
-      val stmt = conn.createStatement()
+      stmt = conn.createStatement()
       stmt.execute("INSERT INTO expenses (username,vendor,amount,status,description) VALUES (\"" + user + "\",\"" +
         payment.vendor + "\"," + payment.amount + ",\"U\",\"" + payment.description + "\");")
     }
-    finally conn.close()
+    finally {
+      stmt.close()
+      conn.close()
+    }
     Ok(views.html.payments(VendorController.getVendorNameList toList, "Transaction with " + payment.vendor + " of Rs " +
       payment.amount + " added"))
   }
@@ -39,15 +45,15 @@ object PaymentController extends Controller {
   }
 
 
-  def approveTransaction(id: Int,choice:Int) = Action { implicit request =>
+  def approveTransaction(id: Int, choice: Int) = Action { implicit request =>
     val conn = DB.getConnection()
     try {
       val stmt = conn.createStatement()
       stmt.execute("update expenses set status=\"A\" where id=" + id + ";")
     }
     finally conn.close()
-    if(choice==1)
-    Redirect("/reviewPay")
+    if (choice == 1)
+      Redirect("/reviewPay")
     else
       Redirect("/deniedTransactions")
   }
@@ -64,13 +70,13 @@ object PaymentController extends Controller {
     Redirect("/reviewPay")
   }
 
-  def processTransaction(id: Int) = Action(parse.multipartFormData) {  implicit request =>
-    var fileName:String = null
+  def processTransaction(id: Int) = Action(parse.multipartFormData) { implicit request =>
+    var fileName: String = null
     request.body.file("receipt").map { receipt =>
-      receipt.ref.moveTo(new File( "public/receipts/"+receipt.filename))
+      receipt.ref.moveTo(new File("public/receipts/" + receipt.filename))
       fileName = receipt.filename
     }.getOrElse {
-      Ok(views.html.acceptedTransactions(getAcceptedPayments.toList,"File could not be uploaded"))
+      Ok(views.html.acceptedTransactions(getAcceptedPayments.toList, "File could not be uploaded"))
     }
     val conn = DB.getConnection()
     try {
@@ -78,7 +84,7 @@ object PaymentController extends Controller {
       stmt.execute("update expenses set status=\"P\" , fileName=\"" + fileName + "\" where id=" + id + ";")
     }
     finally conn.close()
-    Ok(views.html.acceptedTransactions(getAcceptedPayments.toList,"File has been uploaded"))
+    Ok(views.html.acceptedTransactions(getAcceptedPayments.toList, "File has been uploaded"))
   }
 
 
@@ -90,7 +96,7 @@ object PaymentController extends Controller {
       val rs = stmt.executeQuery("select * from expenses where status=\"U\";")
       while (rs.next()) {
         val p1 = PaymentReview(rs.getInt("id"), rs.getString("username"), rs.getString("vendor"),
-          rs.getInt("amount"), rs.getString("description"), rs.getString("admin"),rs.getString("fileName"))
+          rs.getInt("amount"), rs.getString("description"), rs.getString("admin"), rs.getString("fileName"))
         payments += p1
       }
     }
@@ -108,7 +114,7 @@ object PaymentController extends Controller {
       val rs = stmt.executeQuery("select * from expenses where status=\"D\";")
       while (rs.next()) {
         val p1 = PaymentReview(rs.getInt("id"), rs.getString("username"), rs.getString("vendor"),
-          rs.getInt("amount"), rs.getString("description"), rs.getString("admin"),rs.getString("fileName"))
+          rs.getInt("amount"), rs.getString("description"), rs.getString("admin"), rs.getString("fileName"))
         payments += p1
       }
     }
@@ -119,7 +125,7 @@ object PaymentController extends Controller {
   }
 
   def viewAcceptedTransactions = Action { implicit request =>
-    Ok(views.html.acceptedTransactions(getAcceptedPayments.toList,""))
+    Ok(views.html.acceptedTransactions(getAcceptedPayments.toList, ""))
   }
 
   def getAcceptedPayments = {
@@ -130,7 +136,7 @@ object PaymentController extends Controller {
       val rs = stmt.executeQuery("select * from expenses where status=\"A\";")
       while (rs.next()) {
         val p1 = PaymentReview(rs.getInt("id"), rs.getString("username"), rs.getString("vendor"),
-          rs.getInt("amount"), rs.getString("description"), rs.getString("admin"),rs.getString("fileName"))
+          rs.getInt("amount"), rs.getString("description"), rs.getString("admin"), rs.getString("fileName"))
         payments += p1
       }
     }
@@ -148,7 +154,7 @@ object PaymentController extends Controller {
       val rs = stmt.executeQuery("select * from expenses where status=\"P\";")
       while (rs.next()) {
         val p1 = PaymentReview(rs.getInt("id"), rs.getString("username"), rs.getString("vendor"),
-          rs.getInt("amount"), rs.getString("description"), rs.getString("admin"),rs.getString("fileName"))
+          rs.getInt("amount"), rs.getString("description"), rs.getString("admin"), rs.getString("fileName"))
         payments += p1
       }
     }
@@ -161,9 +167,13 @@ object PaymentController extends Controller {
 
   def getFile = Action { implicit request =>
     var payments = new ListBuffer[PaymentForm]
-    val conn = DB.getConnection()
-    val file = new File("expenses.csv")
+    val date:Date = Calendar.getInstance().getTime()
+    val simpleDate: SimpleDateFormat= new SimpleDateFormat("yyyyMMdd.hhmmss")
+    val str:String = "expenses"+simpleDate.format(date) + ".csv"
+    val file = new File(str)
     val writer = CSVWriter.open(file)
+    writer.writeRow(List("username", "vendor", "amount", "description"))
+    val conn = DB.getConnection()
     try {
       val stmt = conn.createStatement()
       val rs = stmt.executeQuery("select * from expenses where status=\"A\";")
@@ -178,11 +188,11 @@ object PaymentController extends Controller {
       conn.close()
       writer.close()
     }
-    Ok.sendFile(new File("expenses.csv"))
+    Ok.sendFile(new File(str))
   }
 
   def getReceipt(fileName: String) = Action { implicit request =>
-    Ok.sendFile(new File("public/receipts/"+fileName))
+    Ok.sendFile(new File("public/receipts/" + fileName))
   }
 
 }

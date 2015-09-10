@@ -7,7 +7,7 @@
         <label>Select Employee</label>
         <select name="username" class="form-control">
             @for(index<-0 until employeeList.size){
-            <option value="@employeeList(index)">@employeeList(index).userName</option>
+            <option value="@employeeList(index).userName">@employeeList(index).userName</option>
             }
         </select>
         <br>
@@ -22,7 +22,7 @@
 
     <tr>
         <th>Name</th>
-        <th>User Name/th>
+        <th>User Name</th>
         <th>Account No</th>
         <th>Phone</th>
         <th>Email</th>
@@ -37,7 +37,7 @@
         <td>@employeeList(index).accountNo</td>
         <td>@employeeList(index).phone</td>
         <td>@employeeList(index).email</td>
-        <td>@employeeList(index).address/td>
+        <td>@employeeList(index).address</td>
         <td>@employeeList(index).role</td>
     </tr>
     }

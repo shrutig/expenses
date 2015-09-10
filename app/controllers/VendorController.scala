@@ -1,5 +1,7 @@
 package controllers
 
+import java.sql.Statement
+
 import models.{VendorName, Vendor}
 import play.api.data.Form
 import play.api.data.Forms._
@@ -24,9 +26,12 @@ object VendorController extends Controller {
     val vendor = request.body
     val conn = DB.getConnection()
     try {
-      val stmt = conn.createStatement
-      stmt.execute("insert into vendor (name,phone,address) values (\"" + vendor.name +
-        "\"," + vendor.phone + ",\"" + vendor.address + "\");")
+      val stmt = conn.prepareStatement("insert into vendor values(?,?,?,?);")
+      stmt.setString(1,vendor.name)
+      stmt.setInt(2,vendor.phone)
+      stmt.setString(3,vendor.address)
+      stmt.setString(4,vendor.description)
+      stmt.executeUpdate()
     }
     finally {
       conn.close()
@@ -41,27 +46,35 @@ object VendorController extends Controller {
   def getListVendors:ListBuffer[models.Vendor] = {
     var vendorList = new ListBuffer[models.Vendor]
     val conn = DB.getConnection()
+    var stmt:Statement =null
     try {
-      val stmt = conn.createStatement()
+      stmt = conn.createStatement()
       val rs = stmt.executeQuery("select name,phone,address,description from vendor;")
       while (rs.next())
         vendorList += Vendor(rs.getString("name"),rs.getInt("phone"),
           rs.getString("address"),rs.getString("description"))
     }
-    finally conn.close()
+    finally{
+      stmt.close()
+      conn.close()
+    }
     vendorList
   }
 
-  val getVendorNameList:ListBuffer[String] = {
+  def getVendorNameList:ListBuffer[String] = {
     var vendorList = new ListBuffer[String]
     val conn = DB.getConnection()
+    var stmt:Statement = null
     try {
-      val stmt = conn.createStatement()
+      stmt = conn.createStatement()
       val rs = stmt.executeQuery("select name from vendor;")
       while (rs.next())
         vendorList += rs.getString("name")
     }
-    finally conn.close()
+    finally{
+      stmt.close()
+      conn.close()
+    }
     vendorList
   }
 

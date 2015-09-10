@@ -14,7 +14,7 @@ import scala.collection.mutable.ListBuffer
 object LoginController extends Controller {
 
   def index = Action {
-    Ok(views.html.index("Login")).withNewSession
+    Ok(views.html.index("")).withNewSession
   }
 
   val userForm = Form(mapping("username" -> text, "password" -> text)(User.apply)(User.unapply))

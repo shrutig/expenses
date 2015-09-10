@@ -2,7 +2,7 @@
 
 @template{
 <h1>Delete Vendor</h1>
-@message
+
 <p>
 <form action="@routes.VendorController.deleteVendor" method="post">
     <div class="form-group">
@@ -10,12 +10,14 @@
             <label>Select Vendor</label>
             <select name="vendor" class="form-control">
                 @for(index<-0 until vendorList.size){
-                <option value="@vendorList(index)">@vendorList(index).name</option>
+                <option value="@vendorList(index).name">@vendorList(index).name</option>
                 }
             </select>
             <br>
             <input type="submit" value="Delete" class="btn btn-default">
+            @message
         </div>
+
     </div>
 </form>
 </p>
