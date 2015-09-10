@@ -38,3 +38,5 @@ shell> sbt run
 This will start the application at http://localhost:9000/
 
 A default super admin user called super1 with password super1 has already been added. You can add or remove any new employees using this id.
+
+A demo of the application is available [here](public/demo/Screencast_09-10-2015_01:02:04 PM.webm)
