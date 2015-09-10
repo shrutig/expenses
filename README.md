@@ -26,10 +26,10 @@ The files 1.sql and 2.sql in conf directory have the database evolutions. In thi
 ##Project details
 This Play application is an Employee-Vendor Payee System.
  
-*It has the capability of allowing login for user, admin or super admin. 
-*Any user can add a payment to the possible vendors. 
-*A super admin has the capability of adding or removing an employee or vendor, or approving or denying transactions. 
-*The admin or the super admin can download the accepted transactions in a .csv file and marking the payment as processed by uploading an EBPay receipt.
+*  It has the capability of allowing login for user, admin or super admin. 
+* Any user can add a payment to the possible vendors. 
+* A super admin has the capability of adding or removing an employee or vendor, or approving or denying transactions. 
+* The admin or the super admin can download the accepted transactions in a .csv file and marking the payment as processed by uploading an EBPay receipt.
 
 Run this file by :
 ```
