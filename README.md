@@ -11,7 +11,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.51-b03, mixed mode)
 Run this file before starting tests and running the application. In the command prompt, open the MySql prompt. Then, run this file:
 ```
 shell> mysql -h host -u user -p
-mysql> source /link/to/file/InitialDb.sql
+mysql> source /link/to/file/Initial.sql
 ```
 Replace host and user with your respective values.
 

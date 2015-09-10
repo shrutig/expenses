@@ -30,23 +30,26 @@ object PaymentController extends Controller {
         payment.vendor + "\"," + payment.amount + ",\"U\",\"" + payment.description + "\");")
     }
     finally conn.close()
-    Ok(views.html.payments(VendorController.getListVendors toList, "Transaction with " + payment.vendor + " of Rs " +
+    Ok(views.html.payments(VendorController.getVendorNameList toList, "Transaction with " + payment.vendor + " of Rs " +
       payment.amount + " added"))
   }
 
   def payment = Action { implicit request =>
-    Ok(views.html.payments(VendorController.getListVendors toList, ""))
+    Ok(views.html.payments(VendorController.getVendorNameList toList, ""))
   }
 
 
-  def approveTransaction(id: Int) = Action { implicit request =>
+  def approveTransaction(id: Int,choice:Int) = Action { implicit request =>
     val conn = DB.getConnection()
     try {
       val stmt = conn.createStatement()
       stmt.execute("update expenses set status=\"A\" where id=" + id + ";")
     }
     finally conn.close()
+    if(choice==1)
     Redirect("/reviewPay")
+    else
+      Redirect("/deniedTransactions")
   }
 
   def denyTransaction(id: Int) = Action { implicit request =>

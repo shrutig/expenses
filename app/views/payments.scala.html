@@ -1,4 +1,4 @@
-@(vendorList:List[Vendor], message: String)(implicit session: play.api.mvc.Session)
+@(vendorList:List[String], message: String)(implicit session: play.api.mvc.Session)
 
 @template{
 <h1>Add Payment</h1>
@@ -8,7 +8,7 @@
             <label>Select Vendor</label>
             <select name="vendor" class="form-control">
                 @for(index<-0 until vendorList.size){
-                <option value="@vendorList(index)">@vendorList(index).name</option>
+                <option value="@vendorList(index)">@vendorList(index)</option>
                 }
             </select>
             <br>

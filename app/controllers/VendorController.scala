@@ -22,11 +22,6 @@ object VendorController extends Controller {
   def addVendor = Action(parse.form(vendorForm, onErrors = (withError: Form[Vendor]) =>
     Redirect("/vendor"))) { implicit request =>
     val vendor = request.body
-    /* DB.withConnection { implicit connection =>
-       SQL("INSERT INTO vendor (name,phone,address) VALUES ({name},{phone},{address});").on("name" -> vendor.name,
-         "phone" -> vendor.phone, "address" -> vendor.address).executeUpdate()
-     }*/
-
     val conn = DB.getConnection()
     try {
       val stmt = conn.createStatement
@@ -36,7 +31,6 @@ object VendorController extends Controller {
     finally {
       conn.close()
     }
-
     Ok(views.html.addVendor("Vendor Information of "+vendor.name+" Added"))
   }
 
@@ -44,8 +38,8 @@ object VendorController extends Controller {
       Ok(views.html.deleteVendor(getListVendors.toList,""))
   }
 
-  def getListVendors:ListBuffer[Vendor] = {
-    var vendorList = new ListBuffer[Vendor]
+  def getListVendors:ListBuffer[models.Vendor] = {
+    var vendorList = new ListBuffer[models.Vendor]
     val conn = DB.getConnection()
     try {
       val stmt = conn.createStatement()
@@ -53,6 +47,19 @@ object VendorController extends Controller {
       while (rs.next())
         vendorList += Vendor(rs.getString("name"),rs.getInt("phone"),
           rs.getString("address"),rs.getString("description"))
+    }
+    finally conn.close()
+    vendorList
+  }
+
+  val getVendorNameList:ListBuffer[String] = {
+    var vendorList = new ListBuffer[String]
+    val conn = DB.getConnection()
+    try {
+      val stmt = conn.createStatement()
+      val rs = stmt.executeQuery("select name from vendor;")
+      while (rs.next())
+        vendorList += rs.getString("name")
     }
     finally conn.close()
     vendorList

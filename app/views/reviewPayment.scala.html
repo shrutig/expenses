@@ -22,7 +22,7 @@
         <td>@transactionList(index).amount</td>
         <td>@transactionList(index).description</td>
         <td>
-            <form action="@routes.PaymentController.approveTransaction(transactionList(index).id)" method="post">
+            <form action="@routes.PaymentController.approveTransaction(transactionList(index).id,1)" method="post">
                 <button class="btn btn-default">Approve</button>
             </form>
         </td>

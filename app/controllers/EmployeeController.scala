@@ -82,18 +82,23 @@ object EmployeeController extends Controller {
     Redirect("/changePassword"))) { implicit request =>
     val changePass = request.body
     val userName = request.session("userName")
-    changePass.updatePassword(userName)
+    val status = changePass.updatePassword(userName)
+    if(status)
     Ok(views.html.changePassword("Password Changed"))
+    else
+      Ok(views.html.changePassword("Password Could not be Changed"))
   }
 
   def getEmployeeList = {
-    var employeeList = new ListBuffer[String]
+    var employeeList = new ListBuffer[models.Employee]
     val conn = DB.getConnection()
     try {
       val stmt = conn.createStatement()
-      val rs = stmt.executeQuery("select username from employee;")
+      val rs = stmt.executeQuery("select * from employee;")
       while (rs.next())
-        employeeList += rs.getString("username")
+        employeeList += models.Employee(rs.getString("user"),rs.getString("username"),rs.getString("password"),rs.getInt
+          ("accountNo"),
+          rs.getInt("phone"),rs.getString("email"),rs.getString("address"),rs.getString("role"))
     }
     finally conn.close()
     employeeList

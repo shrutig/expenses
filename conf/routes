@@ -23,7 +23,7 @@ POST	/deleteEmployee	controllers.EmployeeController.deleteEmployee
 POST	/deleteVendor	controllers.VendorController.deleteVendor
 POST	/updatePassword	controllers.EmployeeController.updatePassword
 POST	/updateProfile	controllers.EmployeeController.updateProfile
-POST	/approve/:id	controllers.PaymentController.approveTransaction(id:Int)
+POST	/approve/:id/:choice	controllers.PaymentController.approveTransaction(id:Int,choice:Int)
 POST	/deny/:id	controllers.PaymentController.denyTransaction(id:Int)
 POST    /process/:id  controllers.PaymentController.processTransaction(id:Int)
 

@@ -1,4 +1,4 @@
-@(employeeList:List[String],message:String)(implicit session: play.api.mvc.Session)
+@(employeeList:List[Employee],message:String)(implicit session: play.api.mvc.Session)
 
 @template{
 <h1>Delete Employee</h1>
@@ -7,7 +7,7 @@
         <label>Select Employee</label>
         <select name="username" class="form-control">
             @for(index<-0 until employeeList.size){
-            <option value="@employeeList(index)">@employeeList(index)</option>
+            <option value="@employeeList(index)">@employeeList(index).userName</option>
             }
         </select>
         <br>
@@ -15,4 +15,32 @@
         @message
     </div>
 </form>
+<br />
+<table class="table table-condensed">
+
+    <thead>
+
+    <tr>
+        <th>Name</th>
+        <th>User Name/th>
+        <th>Account No</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Role</th>
+    </tr>
+    </thead>
+    @for(index <- 0 until employeeList.size){
+    <tr>
+        <td>@employeeList(index).name</td>
+        <td>@employeeList(index).userName</td>
+        <td>@employeeList(index).accountNo</td>
+        <td>@employeeList(index).phone</td>
+        <td>@employeeList(index).email</td>
+        <td>@employeeList(index).address/td>
+        <td>@employeeList(index).role</td>
+    </tr>
+    }
+</table>
+
 }

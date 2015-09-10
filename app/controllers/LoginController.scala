@@ -32,7 +32,7 @@ object LoginController extends Controller {
       val session = Session(Map("userType" -> role, "userName" -> user))
       Ok(views.html.home("")(session)).withSession(session)
     } else {
-      Redirect("/")
+      Ok(views.html.index("Enter proper Fields"))
     }
   }
 
@@ -52,10 +52,7 @@ object LoginController extends Controller {
       rs.next
       val user = User(rs.getString("username"), rs.getString("password"))
       role = rs.getString("role")
-      if (user.name == loginName) {
-        if (user.checkPassword(password)) true
-        else false
-      }
+      if (user.checkPassword(password)) true
       else false
     }
     catch {
@@ -67,13 +64,3 @@ object LoginController extends Controller {
   }
 
 }
-
-/* def changePassword(userName: String, password: String) = Action {
-   DB.withConnection { implicit conn =>
-     SQL("UPDATE users SET password={newPassword} WHERE name={userName};"
-     ).on("newPassword" -> password, "userName" -> userName).executeUpdate()
-   }
-   Ok(views.html.user(userName))
- }
-*/
-
