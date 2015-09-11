@@ -6,8 +6,9 @@ import play.api.Application
 import play.api.GlobalSettings
 import play.api.db.DB
 import play.api.mvc.{Handler, RequestHeader}
-
+import play.api.mvc.Results._
 import scala.collection.mutable.ListBuffer
+import scala.concurrent.Future
 
 object Global extends GlobalSettings {
 
@@ -28,43 +29,59 @@ object Global extends GlobalSettings {
     super.onStart(app)
   }
 
-  private val ADMIN ="admin"
-  private val USER ="user"
+  private val ADMIN = "admin"
+  private val USER = "user"
   private val SUPER = "super"
   private val USER_TYPE = "userType"
 
   override def onRouteRequest(request: RequestHeader): Option[Handler] = {
     val path = request.path
-    val users:ListBuffer[String]=ListBuffer(SUPER,ADMIN)
-      (request.method) match {
-        case "GET" => path match {
-          case "/" => super.onRouteRequest(request)
-          case "/employee" | "/deleteEmployee" | "/reviewPay" | "/deniedTransactions" => check(users-ADMIN,request)
-          case "/vendor" | "/deleteVendor" | "/getFile" | "/acceptedTransactions" | "/processedTransactions" |
-               "/getReceipt" => check(users,request)
-          case "/pay" | "/logout" | "/changePassword" | "/editProfile" => check(users++ListBuffer(USER),request)
-          case _ => super.onRouteRequest(request)
-        }
-        case "POST" => path match {
-          case "/employee" | "/deleteEmployee" | "/approve" | "/deny" | "/process" => check(users-ADMIN,request)
-          case "/vendor" | "/deleteVendor" => check(users,request)
-          case "/pay" | "/updatePassword" | "/updateProfile" => check(users++ListBuffer(USER),request)
-          case _ => super.onRouteRequest(request)
-        }
+    val users: ListBuffer[String] = ListBuffer(SUPER, ADMIN)
+    (request.method) match {
+      case "GET" => path match {
+        case "/" => super.onRouteRequest(request)
+        case "/employee" | "/deleteEmployee" | "/reviewPay" | "/deniedTransactions" => check(users - ADMIN, request)
+        case "/vendor" | "/deleteVendor" | "/getFile" | "/acceptedTransactions" | "/processedTransactions" |
+             "/getReceipt" => check(users, request)
+        case "/pay" | "/logout" | "/changePassword" | "/editProfile" => check(users ++ ListBuffer(USER), request)
+        case _ => super.onRouteRequest(request)
+      }
+      case "POST" => path match {
+        case "/employee" | "/deleteEmployee" | "/approve" | "/deny" | "/process" => check(users - ADMIN, request)
+        case "/vendor" | "/deleteVendor" => check(users, request)
+        case "/pay" | "/updatePassword" | "/updateProfile" => check(users ++ ListBuffer(USER), request)
+        case _ => super.onRouteRequest(request)
+      }
+      case _ => super.onRouteRequest(request)
     }
   }
 
-  def check(users:ListBuffer[String],request: RequestHeader) = {
+  override def onHandlerNotFound(request: RequestHeader) = {
     try {
       val userType = request.session(USER_TYPE)
-      for(user <- users) {
-        if (userType == user)
-          super.onRouteRequest(request)
-      }
-      Some(controllers.LoginController.home)
+      Future.successful(NotFound(views.html.home("")(request.session)))
     }
     catch {
-      case exception:NoSuchElementException => Some(controllers.LoginController.index)
+      case exception: NoSuchElementException => Future.successful(NotFound(views.html.index("")))
+    }
+
+  }
+
+
+  def check(users: ListBuffer[String], request: RequestHeader) = {
+    var status = false
+    try {
+      val userType = request.session(USER_TYPE)
+      for (user <- users) {
+        if (userType == user) {
+          status = true
+        }
+      }
+      if (status) super.onRouteRequest(request)
+      else Some(controllers.LoginController.home)
+    }
+    catch {
+      case exception: NoSuchElementException => Some(controllers.LoginController.index)
     }
   }
 

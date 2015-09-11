@@ -30,11 +30,8 @@ object LoginController extends Controller {
     BadRequest(views.html.index("Enter Fields")))) { implicit request =>
     val userData = request.body
     val user = userData.name
-    print(user)
     val password = userData.password
     if (authenticateUser(user, password)) {
-      print("logged in ")
-      println(role)
       val session = Session(Map(USER_TYPE -> role, USER_NAME -> user))
       Ok(views.html.home("")(session)).withSession(session)
     } else {
