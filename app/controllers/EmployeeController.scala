@@ -29,16 +29,16 @@ object EmployeeController extends Controller {
     Ok(views.html.addEmployee(""))
   }
 
-  val employeeForm = Form(mapping(NAME -> text, USER_NAME -> text, PASSWORD -> text,
-    ACCOUNT_NO -> number,
-    PHONE -> number, EMAIL -> email, ADDRESS -> text,
-    ROLE -> text)(Employee.apply)(Employee.unapply))
+  val employeeForm = Form(mapping(NAME -> text(maxLength = 15), USER_NAME -> text(maxLength = 10), PASSWORD -> text
+    (maxLength = 8), ACCOUNT_NO -> number(min = 0),
+    PHONE -> number(min = 0), EMAIL -> email, ADDRESS -> text(maxLength = 20),
+    ROLE -> text(maxLength = 5))(Employee.apply)(Employee.unapply))
 
   def addEmployee = Action(parse.form(employeeForm, onErrors = (withError: Form[Employee]) =>
     Redirect("/employee"))) { implicit request =>
     val employee = request.body
     employee.addEmployee
-    Ok(views.html.addEmployee("Employee " + employee.name + " Added"))
+    Ok(views.html.addEmployee(s"Employee ${employee.name} Added"))
   }
 
   def editProfile = Action { implicit request =>
@@ -68,7 +68,7 @@ object EmployeeController extends Controller {
   }
 
   val updateEmployeeForm = Form(mapping(ACCOUNT_NO -> number(min = 0), PHONE -> number(min = 0), EMAIL -> text,
-    ADDRESS -> text)(UpdateProfileForm.apply)(UpdateProfileForm.unapply))
+    ADDRESS -> text(maxLength = 20))(UpdateProfileForm.apply)(UpdateProfileForm.unapply))
 
   def updateProfile = Action(parse.form(updateEmployeeForm, onErrors = (withError: Form[UpdateProfileForm])
   =>Redirect("/editProfile"))) { implicit request =>
@@ -81,8 +81,8 @@ object EmployeeController extends Controller {
 
 
 
-  val passwordForm = Form(mapping(CURRENT_PASS -> text, NEW_PASS -> text,
-    REPEAT_PASS -> text)(PasswordUpdateForm.apply)(PasswordUpdateForm.unapply))
+  val passwordForm = Form(mapping(CURRENT_PASS -> text(maxLength = 8), NEW_PASS -> text(maxLength = 8),
+    REPEAT_PASS -> text(maxLength = 8))(PasswordUpdateForm.apply)(PasswordUpdateForm.unapply))
 
   def changePassword = Action { implicit request =>
     Ok(views.html.changePassword(" "))
@@ -126,7 +126,7 @@ object EmployeeController extends Controller {
       stmt.setString(1, userName)
       stmt.execute()
     }
-    Ok(views.html.deleteEmployee(getEmployeeList.toList, userName + " deleted"))
+    Ok(views.html.deleteEmployee(getEmployeeList.toList, s"$userName deleted"))
   }
 
 }

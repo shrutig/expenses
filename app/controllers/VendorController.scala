@@ -26,8 +26,11 @@ object VendorController extends Controller {
     Ok(views.html.addVendor(""))
   }
 
-  val vendorForm = Form(mapping(NAME -> text, PHONE -> number(min = 0), ACCOUNT_NO -> number(min = 0), BANK_DETAIL -> text,
-    ADDRESS -> text, DESCRIPTION -> text)(Vendor.apply)(Vendor.unapply))
+  val vendorForm = Form(mapping(NAME -> text(maxLength = 20), PHONE -> number(min = 0), ACCOUNT_NO -> number(min = 0),
+    BANK_DETAIL -> text(maxLength = 30), ADDRESS -> text(maxLength = 20), DESCRIPTION -> text(maxLength = 30))(Vendor
+    .apply)
+    (Vendor
+    .unapply))
 
   def addVendor = Action(parse.form(vendorForm, onErrors = (withError: Form[Vendor]) =>
     Redirect("/vendor"))) { implicit request =>
@@ -42,7 +45,7 @@ object VendorController extends Controller {
       stmt.setString(6, vendor.description)
       stmt.executeUpdate()
     }
-    Ok(views.html.addVendor("Vendor Information of " + vendor.name + " Added"))
+    Ok(views.html.addVendor(s"Vendor Information of ${vendor.name}  Added"))
   }
 
   def viewDeleteVendor = Action { implicit request =>
@@ -82,7 +85,7 @@ object VendorController extends Controller {
       stmt.setString(1, vendorName)
       stmt.execute()
     }
-    Ok(views.html.deleteVendor(getListVendors.toList, "Vendor " + vendorName + " deleted"))
+    Ok(views.html.deleteVendor(getListVendors.toList, s"Vendor ${vendorName} deleted"))
   }
 
 }

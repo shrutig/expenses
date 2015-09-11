@@ -7,6 +7,8 @@ import play.api.GlobalSettings
 import play.api.db.DB
 import play.api.mvc.{Handler, RequestHeader}
 
+import scala.collection.mutable.ListBuffer
+
 object Global extends GlobalSettings {
 
   override def onStart(app: Application): Unit = {
@@ -18,53 +20,52 @@ object Global extends GlobalSettings {
       val stmt = conn.prepareStatement(START_STATE_1)
       val rs = stmt.executeQuery()
       if (!rs.next()) {
-        println("dhkd")
         val stmt1 = conn.prepareStatement(START_STATE_2)
-        stmt1.setString(1,passHash)
+        stmt1.setString(1, passHash)
         stmt1.executeUpdate()
       }
     }
     super.onStart(app)
   }
 
+  private val ADMIN ="admin"
+  private val USER ="user"
+  private val SUPER = "super"
+  private val USER_TYPE = "userType"
+
   override def onRouteRequest(request: RequestHeader): Option[Handler] = {
     val path = request.path
-    (request.method) match {
-      case "GET" => if (path == "/")
-        super.onRouteRequest(request)
-      else if (path == "/employee" || path == "/deleteEmployee" || path == "/reviewPay" ||
-        path == "/deniedTransactions") {
-        checkSuper(request)
-      }
-      else if (path == "/vendor" || path == "/deleteVendor" || path == "/getFile" || path ==
-        "/acceptedTransactions" || path == "/processedTransactions" || path.startsWith("/getReceipt"))
-        checkSuperOrAdmin(request)
-      else
-        super.onRouteRequest(request)
-
-      case "POST" => if (path == "/employee" || path == "/deleteEmployee" || path.startsWith("/approve") ||
-        path.startsWith("/deny") || path.startsWith("/process")) {
-        checkSuper(request)
-      }
-      else if (path == "/vendor" || path == "/deleteVendor") {
-        checkSuperOrAdmin(request)
-      }
-      else
-        super.onRouteRequest(request)
+    val users:ListBuffer[String]=ListBuffer(SUPER,ADMIN)
+      (request.method) match {
+        case "GET" => path match {
+          case "/" => super.onRouteRequest(request)
+          case "/employee" | "/deleteEmployee" | "/reviewPay" | "/deniedTransactions" => check(users-ADMIN,request)
+          case "/vendor" | "/deleteVendor" | "/getFile" | "/acceptedTransactions" | "/processedTransactions" |
+               "/getReceipt" => check(users,request)
+          case "/pay" | "/logout" | "/changePassword" | "/editProfile" => check(users++ListBuffer(USER),request)
+          case _ => super.onRouteRequest(request)
+        }
+        case "POST" => path match {
+          case "/employee" | "/deleteEmployee" | "/approve" | "/deny" | "/process" => check(users-ADMIN,request)
+          case "/vendor" | "/deleteVendor" => check(users,request)
+          case "/pay" | "/updatePassword" | "/updateProfile" => check(users++ListBuffer(USER),request)
+          case _ => super.onRouteRequest(request)
+        }
     }
   }
 
-  def checkSuper(request: RequestHeader) = {
-    val userType = request.session("userType")
-    if (userType == "super") super.onRouteRequest(request)
-    else Some(controllers.LoginController.home)
+  def check(users:ListBuffer[String],request: RequestHeader) = {
+    try {
+      val userType = request.session(USER_TYPE)
+      for(user <- users) {
+        if (userType == user)
+          super.onRouteRequest(request)
+      }
+      Some(controllers.LoginController.home)
+    }
+    catch {
+      case exception:NoSuchElementException => Some(controllers.LoginController.index)
+    }
   }
-
-  def checkSuperOrAdmin(request: RequestHeader) = {
-    val userType = request.session("userType")
-    if (userType == "super" || userType == "admin") super.onRouteRequest(request)
-    else Some(controllers.LoginController.home)
-  }
-
 
 }

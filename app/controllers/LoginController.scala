@@ -22,7 +22,8 @@ object LoginController extends Controller {
     Ok(views.html.index("")).withNewSession
   }
 
-  val userForm = Form(mapping(USER_NAME -> text, PASSWORD -> text)(User.apply)(User.unapply))
+  val userForm = Form(mapping(USER_NAME -> text(maxLength = 10), PASSWORD -> text(maxLength = 8))(User.apply)(User
+    .unapply))
   var role: String = ""
 
   def authenticate = Action(parse.form(userForm, onErrors = (withError: Form[User]) =>

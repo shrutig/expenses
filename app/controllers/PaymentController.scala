@@ -31,7 +31,7 @@ object PaymentController extends Controller {
   private val STATUS_PROCESSED = "P"
   private val STATUS_INCOMPLETE = "I"
 
-  val paymentForm = Form(mapping(VENDOR -> text, AMOUNT -> number, DESCRIPTION -> text)
+  val paymentForm = Form(mapping(VENDOR -> text(maxLength = 20), AMOUNT -> number, DESCRIPTION -> text(maxLength = 20))
     (PaymentForm.apply)(PaymentForm.unapply))
 
   def addTransaction = Action(parse.form(paymentForm, onErrors = (withErrors: Form[PaymentForm]) =>
@@ -48,8 +48,8 @@ object PaymentController extends Controller {
       stmt.setString(5, payment.description)
       stmt.executeUpdate()
     }
-    Ok(views.html.payments(VendorController.getVendorNameList toList, "Transaction with " + payment.vendor + " of Rs " +
-      payment.amount + " added"))
+    Ok(views.html.payments(VendorController.getVendorNameList toList, s"Transaction with  ${payment.vendor} of " +
+      s"Rs ${payment.amount} added"))
   }
 
   def payment = Action { implicit request =>
@@ -88,7 +88,7 @@ object PaymentController extends Controller {
       receipt.ref.moveTo(new File("public/receipts/" + receipt.filename))
       fileName = receipt.filename
     }.getOrElse {
-      Ok(views.html.acceptedTransactions(getAcceptedPayments.toList, "File could not be uploaded"))
+      Ok(views.html.acceptedTransactions(getPayments(STATUS_ACCEPTED), "File could not be uploaded"))
     }
     DB.withConnection { conn =>
       val stmt = conn.prepareStatement(models.sqlStatement.PAY_STATE_4)
@@ -97,15 +97,14 @@ object PaymentController extends Controller {
       stmt.setInt(3, id)
       stmt.execute()
     }
-    Ok(views.html.acceptedTransactions(getAcceptedPayments.toList, "File has been uploaded"))
+    Ok(views.html.acceptedTransactions(getPayments(STATUS_ACCEPTED), "File has been uploaded"))
   }
 
-
-  def reviewPayments = Action { implicit request =>
+  def getPayments(status: String): List[PaymentReview] = {
     var payments = new ListBuffer[PaymentReview]
     DB.withConnection { conn =>
       val stmt = conn.prepareStatement(models.sqlStatement.PAY_STATE_5)
-      stmt.setString(1, STATUS_INCOMPLETE)
+      stmt.setString(1, status)
       val rs = stmt.executeQuery()
       while (rs.next()) {
         val p1 = PaymentReview(rs.getInt(ID), rs.getString(USER_NAME), rs.getString
@@ -114,61 +113,27 @@ object PaymentController extends Controller {
         payments += p1
       }
     }
-    Ok(views.html.reviewPayment(payments.toList))
+    payments toList
+  }
+
+  def reviewPayments = Action { implicit request =>
+    Ok(views.html.reviewPayment(getPayments(STATUS_INCOMPLETE)))
   }
 
   def viewDeniedTransactions = Action { implicit request =>
-    var payments = new ListBuffer[PaymentReview]
-    DB.withConnection { conn =>
-      val stmt = conn.prepareStatement(models.sqlStatement.PAY_STATE_5)
-      stmt.setString(1, STATUS_DENIED)
-      val rs = stmt.executeQuery()
-      while (rs.next()) {
-        val p1 = PaymentReview(rs.getInt(ID), rs.getString(USER_NAME), rs.getString(VENDOR),
-          rs.getInt(AMOUNT), rs.getString(DESCRIPTION), rs.getString(ADMIN), rs.getString(FILE_NAME))
-        payments += p1
-      }
-    }
-    Ok(views.html.deniedTransactions(payments.toList))
+    Ok(views.html.deniedTransactions(getPayments(STATUS_DENIED)))
   }
 
   def viewAcceptedTransactions = Action { implicit request =>
-    Ok(views.html.acceptedTransactions(getAcceptedPayments.toList, ""))
-  }
-
-  def getAcceptedPayments = {
-    var payments = new ListBuffer[PaymentReview]
-    DB.withConnection { conn =>
-      val stmt = conn.prepareStatement(models.sqlStatement.PAY_STATE_5)
-      stmt.setString(1, STATUS_ACCEPTED)
-      val rs = stmt.executeQuery()
-      while (rs.next()) {
-        val p1 = PaymentReview(rs.getInt(ID), rs.getString(USER_NAME), rs.getString(VENDOR),
-          rs.getInt(AMOUNT), rs.getString(DESCRIPTION), rs.getString(ADMIN), rs.getString(FILE_NAME))
-        payments += p1
-      }
-    }
-    payments
+    Ok(views.html.acceptedTransactions(getPayments(STATUS_ACCEPTED), ""))
   }
 
   def viewProcessedTransactions = Action { implicit request =>
-    var payments = new ListBuffer[PaymentReview]
-    DB.withConnection { conn =>
-      val stmt = conn.prepareStatement(models.sqlStatement.PAY_STATE_5)
-      stmt.setString(1, STATUS_PROCESSED)
-      val rs = stmt.executeQuery()
-      while (rs.next()) {
-        val p1 = PaymentReview(rs.getInt(ID), rs.getString(USER_NAME), rs.getString(VENDOR),
-          rs.getInt(AMOUNT), rs.getString(DESCRIPTION), rs.getString(ADMIN), rs.getString(FILE_NAME))
-        payments += p1
-      }
-    }
-    Ok(views.html.processedTransactions(payments.toList))
+    Ok(views.html.processedTransactions(getPayments(STATUS_PROCESSED)))
   }
 
 
   def getFile = Action { implicit request =>
-    // var payments = new ListBuffer[PaymentForm]
     val date: Date = Calendar.getInstance().getTime()
     val simpleDate: SimpleDateFormat = new SimpleDateFormat("yyyyMMdd.hhmmss")
     val str: String = "expenses" + simpleDate.format(date) + ".csv"
@@ -189,7 +154,6 @@ object PaymentController extends Controller {
           writer.writeRow(List(rs.getString(USER_NAME), p1.vendor, rs1.getString(VENDOR_ACCOUNT_NO), rs1.getString
             (VENDOR_BANK_DETAIL), p1.amount, p1.description))
         }
-        //payments += p1
       }
     }
     Ok.sendFile(new File(str))
