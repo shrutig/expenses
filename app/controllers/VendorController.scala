@@ -14,81 +14,75 @@ import scala.collection.mutable.ListBuffer
 
 object VendorController extends Controller {
 
+  private val VENDOR = "vendor"
+  private val NAME = "name"
+  private val PHONE = "phone"
+  private val ADDRESS = "address"
+  private val DESCRIPTION = "description"
+  private val ACCOUNT_NO = "accountNo"
+  private val BANK_DETAIL = "bankDetail"
+
   def vendor = Action { implicit request =>
-     Ok(views.html.addVendor(""))
+    Ok(views.html.addVendor(""))
   }
 
-  val vendorForm = Form(mapping("name" -> text, "phone" -> number(min = 0),
-    "address" -> text, "description" -> text)(Vendor.apply)(Vendor.unapply))
+  val vendorForm = Form(mapping(NAME -> text, PHONE -> number(min = 0), ACCOUNT_NO -> number(min = 0), BANK_DETAIL -> text,
+    ADDRESS -> text, DESCRIPTION -> text)(Vendor.apply)(Vendor.unapply))
 
   def addVendor = Action(parse.form(vendorForm, onErrors = (withError: Form[Vendor]) =>
     Redirect("/vendor"))) { implicit request =>
     val vendor = request.body
-    val conn = DB.getConnection()
-    try {
-      val stmt = conn.prepareStatement("insert into vendor values(?,?,?,?);")
-      stmt.setString(1,vendor.name)
-      stmt.setInt(2,vendor.phone)
-      stmt.setString(3,vendor.address)
-      stmt.setString(4,vendor.description)
+    DB.withConnection { conn =>
+      val stmt = conn.prepareStatement(models.sqlStatement.VENDOR_STATE_1)
+      stmt.setString(1, vendor.name)
+      stmt.setInt(2, vendor.phone)
+      stmt.setInt(3, vendor.accountNo)
+      stmt.setString(4, vendor.bankDetail)
+      stmt.setString(5, vendor.address)
+      stmt.setString(6, vendor.description)
       stmt.executeUpdate()
     }
-    finally {
-      conn.close()
-    }
-    Ok(views.html.addVendor("Vendor Information of "+vendor.name+" Added"))
+    Ok(views.html.addVendor("Vendor Information of " + vendor.name + " Added"))
   }
 
   def viewDeleteVendor = Action { implicit request =>
-      Ok(views.html.deleteVendor(getListVendors.toList,""))
+    Ok(views.html.deleteVendor(getListVendors.toList, ""))
   }
 
-  def getListVendors:ListBuffer[models.Vendor] = {
+  def getListVendors: ListBuffer[models.Vendor] = {
     var vendorList = new ListBuffer[models.Vendor]
-    val conn = DB.getConnection()
-    var stmt:Statement =null
-    try {
-      stmt = conn.createStatement()
-      val rs = stmt.executeQuery("select name,phone,address,description from vendor;")
+    DB.withConnection { conn =>
+      val stmt = conn.prepareStatement(models.sqlStatement.VENDOR_STATE_2)
+      val rs = stmt.executeQuery()
       while (rs.next())
-        vendorList += Vendor(rs.getString("name"),rs.getInt("phone"),
-          rs.getString("address"),rs.getString("description"))
-    }
-    finally{
-      stmt.close()
-      conn.close()
+        vendorList += Vendor(rs.getString(NAME), rs.getInt(PHONE), rs.getInt(ACCOUNT_NO), rs.getString(BANK_DETAIL), rs
+          .getString(ADDRESS), rs.getString(DESCRIPTION))
     }
     vendorList
   }
 
-  def getVendorNameList:ListBuffer[String] = {
+  def getVendorNameList: ListBuffer[String] = {
     var vendorList = new ListBuffer[String]
-    val conn = DB.getConnection()
-    var stmt:Statement = null
-    try {
-      stmt = conn.createStatement()
-      val rs = stmt.executeQuery("select name from vendor;")
+    DB.withConnection { conn =>
+      val stmt = conn.prepareStatement(models.sqlStatement.VENDOR_STATE_3)
+      val rs = stmt.executeQuery()
       while (rs.next())
-        vendorList += rs.getString("name")
-    }
-    finally{
-      stmt.close()
-      conn.close()
+        vendorList += rs.getString(NAME)
     }
     vendorList
   }
 
-  val deleteVendorForm = Form(mapping("vendor" -> text)(VendorName.apply)(VendorName.unapply))
+  val deleteVendorForm = Form(mapping(VENDOR -> text)(VendorName.apply)(VendorName.unapply))
 
   def deleteVendor = Action(parse.form(deleteVendorForm, onErrors = (withError: Form[VendorName]) =>
     Redirect("/deleteVendor"))) { implicit request =>
     val vendorName = request.body.name
-    val conn = DB.getConnection()
-    try {
-      val stmt = conn.createStatement()
-      stmt.execute("delete from vendor where name=\"" + vendorName + "\";")
-    } finally conn.close()
-    Ok(views.html.deleteVendor(getListVendors.toList,"Vendor "+vendorName+" deleted"))
+    DB.withConnection { conn =>
+      val stmt = conn.prepareStatement(models.sqlStatement.VENDOR_STATE_4)
+      stmt.setString(1, vendorName)
+      stmt.execute()
+    }
+    Ok(views.html.deleteVendor(getListVendors.toList, "Vendor " + vendorName + " deleted"))
   }
 
 }

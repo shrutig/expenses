@@ -13,11 +13,16 @@ import scala.collection.mutable.ListBuffer
 
 object LoginController extends Controller {
 
+  private val USER_NAME = "userName"
+  private val PASSWORD = "password"
+  private val USER_TYPE = "userType"
+  private val ROLE = "role"
+
   def index = Action {
     Ok(views.html.index("")).withNewSession
   }
 
-  val userForm = Form(mapping("username" -> text, "password" -> text)(User.apply)(User.unapply))
+  val userForm = Form(mapping(USER_NAME -> text, PASSWORD -> text)(User.apply)(User.unapply))
   var role: String = ""
 
   def authenticate = Action(parse.form(userForm, onErrors = (withError: Form[User]) =>
@@ -29,7 +34,7 @@ object LoginController extends Controller {
     if (authenticateUser(user, password)) {
       print("logged in ")
       println(role)
-      val session = Session(Map("userType" -> role, "userName" -> user))
+      val session = Session(Map(USER_TYPE -> role, USER_NAME -> user))
       Ok(views.html.home("")(session)).withSession(session)
     } else {
       Ok(views.html.index("Enter proper Fields"))
@@ -45,21 +50,17 @@ object LoginController extends Controller {
   }
 
   def authenticateUser(loginName: String, password: String): Boolean = {
-    val conn = DB.getConnection()
-    try {
-      val stmt = conn.createStatement()
-      val rs = stmt.executeQuery("select username,password,role from employee where username=\"" + loginName + "\";")
-      rs.next
-      val user = User(rs.getString("username"), rs.getString("password"))
-      role = rs.getString("role")
-      if (user.checkPassword(password)) true
+    DB.withConnection { conn =>
+      val stmt = conn.prepareStatement(models.sqlStatement.LOGIN_STATE)
+      stmt.setString(1, loginName)
+      val rs = stmt.executeQuery()
+      if (rs.next) {
+        val user = User(rs.getString(USER_NAME), rs.getString(PASSWORD))
+        role = rs.getString(ROLE)
+        if (user.checkPassword(password)) true
+        else false
+      }
       else false
-    }
-    catch {
-      case e: SQLException => false
-    }
-    finally {
-      conn.close()
     }
   }
 

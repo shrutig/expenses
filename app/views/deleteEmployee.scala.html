@@ -5,7 +5,7 @@
 <form action="@routes.EmployeeController.deleteEmployee" method="post" class="form-group">
     <div class="col-xs-3">
         <label>Select Employee</label>
-        <select name="username" class="form-control">
+        <select name="userName" class="form-control">
             @for(index<-0 until employeeList.size){
             <option value="@employeeList(index).userName">@employeeList(index).userName</option>
             }

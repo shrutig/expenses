@@ -11,6 +11,7 @@ libraryDependencies ++= Seq(jdbc,
   evolutions,
   "org.webjars" % "webjars-play_2.10" % "2.4.0-1",
   "org.webjars" % "bootstrap" % "3.3.5",
-  "org.webjars" % "jquery" % "2.1.4")
+  "org.webjars" % "jquery" % "2.1.4",
+  "org.mindrot" % "jbcrypt" % "0.3m")
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
