@@ -1,10 +1,11 @@
 # Users schema
 
 # --- !Ups
+CREATE DATABASE IF NOT EXISTS evp ;
 Use evp;
 
 CREATE TABLE employee (userName varchar(10) PRIMARY KEY,password varchar(60),name varchar(15),accountNo int,phone int
-,email varchar(30),address varchar(20),role varchar(5));
+,email varchar(30),address varchar(20),role varchar(5)) ;
 
 CREATE TABLE vendor (name varchar(20) PRIMARY KEY,phone int,accountNo int,bankDetail varchar(30),address varchar(20),
 description varchar(30));

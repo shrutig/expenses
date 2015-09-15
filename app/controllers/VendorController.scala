@@ -1,14 +1,11 @@
 package controllers
 
-import java.sql.Statement
-
 import models.{VendorName, Vendor}
 import play.api.data.Form
 import play.api.data.Forms._
 import play.api.db.DB
 import play.api.Play.current
 import play.api.mvc.{Action, Controller}
-import views.html.helper
 
 import scala.collection.mutable.ListBuffer
 

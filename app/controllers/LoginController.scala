@@ -1,15 +1,11 @@
 package controllers
 
-import java.sql.SQLException
-
-import models.{Navigation, User}
+import models.{ User}
 import play.api.Play.current
 import play.api.data.Form
 import play.api.data.Forms._
 import play.api.db.DB
 import play.api.mvc._
-
-import scala.collection.mutable.ListBuffer
 
 object LoginController extends Controller {
 

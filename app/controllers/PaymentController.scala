@@ -1,7 +1,7 @@
 package controllers
 
 import java.io.File
-import java.sql.{PreparedStatement, Statement}
+import java.sql.{PreparedStatement}
 import java.text.SimpleDateFormat
 import java.util.{Date, Calendar}
 

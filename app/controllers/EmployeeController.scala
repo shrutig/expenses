@@ -79,8 +79,6 @@ object EmployeeController extends Controller {
     Ok(views.html.editEmployee(filledForm, "Profile Updated"))
   }
 
-
-
   val passwordForm = Form(mapping(CURRENT_PASS -> text(maxLength = 8), NEW_PASS -> text(maxLength = 8),
     REPEAT_PASS -> text(maxLength = 8))(PasswordUpdateForm.apply)(PasswordUpdateForm.unapply))
 

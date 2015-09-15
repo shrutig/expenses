@@ -1,9 +1,7 @@
-//package views
 
 import org.mindrot.jbcrypt.BCrypt
 import play.api.Play.current
-import play.api.Application
-import play.api.GlobalSettings
+import play.api.{ Application, GlobalSettings}
 import play.api.db.DB
 import play.api.mvc.{Handler, RequestHeader}
 import play.api.mvc.Results._
@@ -48,7 +46,7 @@ object Global extends GlobalSettings {
       }
       case "POST" => path match {
         case "/employee" | "/deleteEmployee" | "/approve" | "/deny" | "/process" => check(users - ADMIN, request)
-        case "/vendor" | "/deleteVendor" => check(users, request)
+        case "/vendor" | "/deleteVendor" | "/assets" => check(users, request)
         case "/pay" | "/updatePassword" | "/updateProfile" => check(users ++ ListBuffer(USER), request)
         case _ => super.onRouteRequest(request)
       }
@@ -66,7 +64,6 @@ object Global extends GlobalSettings {
     }
 
   }
-
 
   def check(users: ListBuffer[String], request: RequestHeader) = {
     var status = false
