@@ -38,7 +38,7 @@ object Global extends GlobalSettings {
     (request.method) match {
       case "GET" => path match {
         case "/" => super.onRouteRequest(request)
-        case "/employee" | "/deleteEmployee" | "/reviewPay" | "/deniedTransactions" => check(users - ADMIN, request)
+        case "/deleteEmployee" | "/reviewPay" | "/deniedTransactions" => check(users - ADMIN, request)
         case "/vendor" | "/deleteVendor" | "/getFile" | "/acceptedTransactions" | "/processedTransactions" |
              "/getReceipt" => check(users, request)
         case "/pay" | "/logout" | "/changePassword" | "/editProfile" => check(users ++ ListBuffer(USER), request)
@@ -78,7 +78,7 @@ object Global extends GlobalSettings {
       else Some(controllers.LoginController.home)
     }
     catch {
-      case exception: NoSuchElementException => Some(controllers.LoginController.index)
+      case exception: NoSuchElementException => Some(controllers.LoginController.login)
     }
   }
 

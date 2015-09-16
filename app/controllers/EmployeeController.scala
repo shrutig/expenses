@@ -1,16 +1,15 @@
 package controllers
 
-import models.{EmployeeName, UpdateProfileForm, PasswordUpdateForm, Employee}
+import jp.t2v.lab.play2.auth.AuthElement
+import models.Role.Admin
+import models._
 import play.api.Play.current
 import play.api.data.Form
 import play.api.data.Forms._
-import play.api.db.DB
 import play.api.mvc.{Action, Controller}
 import play.api.i18n.Messages.Implicits._
 
-import scala.collection.mutable.ListBuffer
-
-object EmployeeController extends Controller {
+object EmployeeController extends Controller with AuthElement with AuthConfigImpl {
 
   private val NAME = "name"
   private val USER_NAME = "userName"
@@ -25,8 +24,8 @@ object EmployeeController extends Controller {
   private val REPEAT_PASS = "repeatPassword"
 
 
-  def employee = Action { implicit request =>
-    Ok(views.html.addEmployee(""))
+  def employee = Action {
+      implicit request => Ok(views.html.addEmployee(""))
   }
 
   val employeeForm = Form(mapping(NAME -> text(maxLength = 15), USER_NAME -> text(maxLength = 10), PASSWORD -> text
@@ -37,7 +36,8 @@ object EmployeeController extends Controller {
   def addEmployee = Action(parse.form(employeeForm, onErrors = (withError: Form[Employee]) =>
     Redirect("/employee"))) { implicit request =>
     val employee = request.body
-    employee.addEmployee
+    Account.create(Account(employee.userName, employee.password, employee.name, employee.accountNo,
+      employee.phone, employee.email, employee.address, Role.valueOf(employee.role)))
     Ok(views.html.addEmployee(s"Employee ${employee.name} Added"))
   }
 
@@ -48,33 +48,20 @@ object EmployeeController extends Controller {
   }
 
   def getProfile(userName: String): Form[UpdateProfileForm] = {
-    var accountNo: Int = 0
-    var phone: Int = 0
-    var email: String = ""
-    var address: String = ""
-    var filledForm:Form[UpdateProfileForm] =null
-    DB.withConnection { conn =>
-      val stmt = conn.prepareStatement(models.sqlStatement.EMP_CONST_STATE_1)
-      stmt.setString(1, userName)
-      val rs = stmt.executeQuery()
-      rs.next()
-      accountNo = rs.getInt(ACCOUNT_NO)
-      phone = rs.getInt(PHONE)
-      email = rs.getString(EMAIL)
-      address = rs.getString(ADDRESS)
-      filledForm = updateEmployeeForm.fill(UpdateProfileForm(accountNo, phone, email, address))
+    Account.findById(userName) match {
+      case Some(account) => updateEmployeeForm.fill(UpdateProfileForm(account.accountNo, account.phone, account.email,
+        account.address))
     }
-    filledForm
   }
 
   val updateEmployeeForm = Form(mapping(ACCOUNT_NO -> number(min = 0), PHONE -> number(min = 0), EMAIL -> text,
     ADDRESS -> text(maxLength = 20))(UpdateProfileForm.apply)(UpdateProfileForm.unapply))
 
   def updateProfile = Action(parse.form(updateEmployeeForm, onErrors = (withError: Form[UpdateProfileForm])
-  =>Redirect("/editProfile"))) { implicit request =>
+  => Redirect("/editProfile"))) { implicit request =>
     val userProfile = request.body
     val userName = request.session(USER_NAME)
-    userProfile.update(userName)
+    Account.updateAccount(userName, userProfile)
     val filledForm = getProfile(userName)
     Ok(views.html.editEmployee(filledForm, "Profile Updated"))
   }
@@ -90,7 +77,7 @@ object EmployeeController extends Controller {
     Redirect("/changePassword"))) { implicit request =>
     val changePass = request.body
     val userName = request.session(USER_NAME)
-    val status = changePass.updatePassword(userName)
+    val status = Account.updatePassword(userName, changePass)
     if (status)
       Ok(views.html.changePassword("Password Changed"))
     else
@@ -98,16 +85,7 @@ object EmployeeController extends Controller {
   }
 
   def getEmployeeList = {
-    var employeeList = new ListBuffer[models.Employee]
-    DB.withConnection { conn =>
-      val stmt = conn.prepareStatement(models.sqlStatement.EMP_CONST_STATE_2)
-      val rs = stmt.executeQuery()
-      while (rs.next())
-        employeeList += models.Employee(rs.getString(NAME), rs.getString(USER_NAME), rs.getString(PASSWORD), rs.getInt
-          (ACCOUNT_NO),
-          rs.getInt(PHONE), rs.getString(EMAIL), rs.getString(ADDRESS), rs.getString(ROLE))
-    }
-    employeeList
+    Account.findAll()
   }
 
   def viewDeleteEmployee = Action { implicit request =>
@@ -119,11 +97,7 @@ object EmployeeController extends Controller {
   def deleteEmployee = Action(parse.form(deleteEmployeeForm, onErrors = (withError: Form[EmployeeName]) =>
     Redirect("/deleteEmployee"))) { implicit request =>
     val userName = request.body.userName
-    DB.withConnection { conn =>
-      val stmt = conn.prepareStatement(models.sqlStatement.EMP_CONST_STATE_3)
-      stmt.setString(1, userName)
-      stmt.execute()
-    }
+    Account.deleteAccount(userName)
     Ok(views.html.deleteEmployee(getEmployeeList.toList, s"$userName deleted"))
   }
 

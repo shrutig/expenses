@@ -27,7 +27,7 @@ object VendorController extends Controller {
     BANK_DETAIL -> text(maxLength = 30), ADDRESS -> text(maxLength = 20), DESCRIPTION -> text(maxLength = 30))(Vendor
     .apply)
     (Vendor
-    .unapply))
+      .unapply))
 
   def addVendor = Action(parse.form(vendorForm, onErrors = (withError: Form[Vendor]) =>
     Redirect("/vendor"))) { implicit request =>

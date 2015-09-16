@@ -38,7 +38,6 @@ object PaymentController extends Controller {
     Redirect("/pay"))) { implicit request =>
     val payment = request.body
     val user = request.session(USER_NAME)
-
     DB.withConnection() { conn =>
       val stmt: PreparedStatement = conn.prepareStatement(models.sqlStatement.PAY_STATE_1)
       stmt.setString(1, user)

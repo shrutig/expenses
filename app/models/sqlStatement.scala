@@ -19,4 +19,5 @@ object sqlStatement {
   val EMP_STATE_2 = "update employee set accountNo=?,phone=?,email=?,address=? where userName=?;"
   val USER_STATE_1 = "select password from employee where userName=?;"
   val USER_STATE_2 = "update employee set password=? where userName=?;"
+  val ACCOUNT_STATE_2 ="select * from employee where userName=?"
 }

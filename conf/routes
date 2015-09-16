@@ -1,4 +1,4 @@
-GET	/		controllers.LoginController.index
+GET	/		controllers.LoginController.login
 GET	/home		controllers.LoginController.home
 GET     /employee	controllers.EmployeeController.employee
 GET     /vendor		controllers.VendorController.vendor
