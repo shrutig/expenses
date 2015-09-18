@@ -48,7 +48,7 @@ object Global extends GlobalSettings {
       }
       case "POST" => path match {
         case "/employee" | "/deleteEmployee" | "/approve" | "/deny" | "/process" => check(users - ADMIN, request)
-        case "/vendor" | "/deleteVendor" => check(users, request)
+        case "/vendor" | "/deleteVendor"| "/assets"  => check(users, request)
         case "/pay" | "/updatePassword" | "/updateProfile" => check(users ++ ListBuffer(USER), request)
         case _ => super.onRouteRequest(request)
       }
