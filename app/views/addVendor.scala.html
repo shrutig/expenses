@@ -1,27 +1,31 @@
-@(message:String)(implicit session: play.api.mvc.Session)
+@(signInForm: Form[models.Vendor],message:String,user: models.User)(implicit request:RequestHeader, messages:
+Messages)
+@import b3.inline.fieldConstructor
 
-@template{
+@main(Messages("home.title"), Some(user)) {
+
 <h1>Add Vendor</h1>
-<form action="@routes.VendorController.addVendor()" method="post">
-    <div class="form-group">
-        <div class="col-xs-3">
-            <label>Name</label>
-            <input name="name" type="text" class="form-control">
-            <label>Phone</label>
-            <input name="phone" type="number" class="form-control" min="0">
-            <label>Account No</label>
-            <input name="accountNo" type="number" class="form-control" min="0">
-            <label>Bank Details</label>
-            <input name="bankDetail" type="text" class="form-control">
-            <label>Address</label>
-            <input name="address" type="text" class="form-control">
-            <label>Description</label>
-            <input name="description" type="text" class="form-control">
-            <br>
-            <input name="submit" type="submit" class="btn btn-default">
-            @message
-        </div>
+@helper.form(action = routes.VendorController.addVendor()) {
+@helper.CSRF.formField
+<div class="form-group">
+    <div class="col-xs-3">
+        <label>Name</label>
+        <input name="name" type="text" class="form-control">
+        <label>Phone</label>
+        <input name="phone" type="number" class="form-control" min="0">
+        <label>Account No</label>
+        <input name="accountNo" type="number" class="form-control" min="0">
+        <label>Bank Details</label>
+        <input name="bankDetail" type="text" class="form-control">
+        <label>Address</label>
+        <input name="address" type="text" class="form-control">
+        <label>Description</label>
+        <input name="description" type="text" class="form-control">
+        <br>
+        <input name="submit" type="submit" class="btn btn-default">
+        @message
     </div>
-</form>
+</div>
+}
 
 }

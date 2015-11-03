@@ -1,0 +1,28 @@
+@( socialProviders: com.mohiva.play.silhouette.impl.providers.SocialProviderRegistry)(implicit request: RequestHeader, messages: Messages)
+
+@import com.mohiva.play.silhouette.impl.providers.oauth2.ClefProvider
+@import b3.inline.fieldConstructor
+
+@main(Messages("sign.in.title")) {
+    @request.flash.get("error").map { msg =>
+        <div class="col-md-6 col-md-offset-3 alert alert-danger alert-error">
+            <a href="#" class="close" data-dismiss="alert">&times;</a>
+            <strong>@Messages("error")</strong> @msg
+        </div>
+    }
+    <fieldset class="col-md-6 col-md-offset-3">
+        <legend>@Messages("sign.in.credentials")</legend>
+
+        @if(socialProviders.providers.nonEmpty) {
+            <div class="social-providers">
+
+                <div>
+                @for(p <- socialProviders.providers if p.id == "google") {
+                    <a href="@routes.SocialAuthController.authenticate(p.id)" class="provider @p.id" title="@Messages(p.id)"><img src="@routes.Assets.at(s"images/providers/${p.id}.png")" width="64px" height="64px" alt="@Messages(p.id)"></a>
+                }
+                </div>
+            </div>
+        }
+
+    </fieldset>
+}

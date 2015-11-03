@@ -1,15 +1,25 @@
 package controllers
 
-import models.{VendorName, Vendor}
+import javax.inject.Inject
+
+import com.mohiva.play.silhouette.api.{Silhouette, Environment}
+import com.mohiva.play.silhouette.impl.authenticators.CookieAuthenticator
+import com.mohiva.play.silhouette.impl.providers.SocialProviderRegistry
+import models.authorizations.{Admin, WithRole}
+import models.{User, VendorName, Vendor}
 import play.api.data.Form
 import play.api.data.Forms._
+import play.api.i18n.MessagesApi
 import play.api.db.DB
 import play.api.Play.current
-import play.api.mvc.{Action, Controller}
-
 import scala.collection.mutable.ListBuffer
+import scala.concurrent.Future
 
-object VendorController extends Controller {
+class VendorController @Inject()(
+                                  val messagesApi: MessagesApi,
+                                  val env: Environment[User, CookieAuthenticator],
+                                  socialProviderRegistry: SocialProviderRegistry)
+  extends Silhouette[User, CookieAuthenticator] {
 
   private val VENDOR = "vendor"
   private val NAME = "name"
@@ -19,34 +29,47 @@ object VendorController extends Controller {
   private val ACCOUNT_NO = "accountNo"
   private val BANK_DETAIL = "bankDetail"
 
-  def vendor = Action { implicit request =>
-    Ok(views.html.addVendor(""))
+  def vendor = SecuredAction(WithRole(Admin) ) { implicit request =>
+    Ok(views.html.addVendor(vendorForm, "", request.identity))
   }
 
   val vendorForm = Form(mapping(NAME -> text(maxLength = 20), PHONE -> number(min = 0), ACCOUNT_NO -> number(min = 0),
     BANK_DETAIL -> text(maxLength = 30), ADDRESS -> text(maxLength = 20), DESCRIPTION -> text(maxLength = 30))(Vendor
-    .apply)
-    (Vendor
-      .unapply))
+    .apply)(Vendor.unapply))
 
-  def addVendor = Action(parse.form(vendorForm, onErrors = (withError: Form[Vendor]) =>
-    Redirect("/vendor"))) { implicit request =>
-    val vendor = request.body
-    DB.withConnection { conn =>
-      val stmt = conn.prepareStatement(models.sqlStatement.VENDOR_STATE_1)
-      stmt.setString(1, vendor.name)
-      stmt.setInt(2, vendor.phone)
-      stmt.setInt(3, vendor.accountNo)
-      stmt.setString(4, vendor.bankDetail)
-      stmt.setString(5, vendor.address)
-      stmt.setString(6, vendor.description)
-      stmt.executeUpdate()
-    }
-    Ok(views.html.addVendor(s"Vendor Information of ${vendor.name}  Added"))
+  def addVendor() = SecuredAction(WithRole(Admin) ).async { implicit request =>
+    vendorForm.bindFromRequest.fold(
+      form => Future.successful(BadRequest(views.html.addVendor(vendorForm, "wrong data", request.identity))),
+      data => {
+        DB.withConnection { conn =>
+          val stmt1 = conn.prepareStatement(models.sqlStatement.VENDOR_STATE_5)
+          stmt1.setString(1,data.name)
+          val rs = stmt1.executeQuery()
+          if(rs.next()){
+            if(rs.getInt(1) == 0){
+              val stmt = conn.prepareStatement(models.sqlStatement.VENDOR_STATE_1)
+              stmt.setString(1, data.name)
+              stmt.setInt(2, data.phone)
+              stmt.setInt(3, data.accountNo)
+              stmt.setString(4, data.bankDetail)
+              stmt.setString(5, data.address)
+              stmt.setString(6, data.description)
+              stmt.executeUpdate()
+              Future.successful(Ok(views.html.addVendor(vendorForm, s"Vendor Information of ${data.name}  Added", request.identity)))
+            }
+            else
+              Future.successful(BadRequest(views.html.addVendor(vendorForm, "vendor already exists", request.identity)))
+          }
+          else
+            Future.successful(BadRequest(views.html.addVendor(vendorForm, "wrong data", request.identity)))
+        }
+      }
+    )
   }
 
-  def viewDeleteVendor = Action { implicit request =>
-    Ok(views.html.deleteVendor(getListVendors.toList, ""))
+
+  def viewDeleteVendor = SecuredAction(WithRole(Admin) ).async { implicit request =>
+    Future.successful(Ok(views.html.deleteVendor(getListVendors.toList, "", request.identity)))
   }
 
   def getListVendors: ListBuffer[models.Vendor] = {
@@ -74,15 +97,20 @@ object VendorController extends Controller {
 
   val deleteVendorForm = Form(mapping(VENDOR -> text)(VendorName.apply)(VendorName.unapply))
 
-  def deleteVendor = Action(parse.form(deleteVendorForm, onErrors = (withError: Form[VendorName]) =>
-    Redirect("/deleteVendor"))) { implicit request =>
-    val vendorName = request.body.name
-    DB.withConnection { conn =>
-      val stmt = conn.prepareStatement(models.sqlStatement.VENDOR_STATE_4)
-      stmt.setString(1, vendorName)
-      stmt.execute()
-    }
-    Ok(views.html.deleteVendor(getListVendors.toList, s"Vendor ${vendorName} deleted"))
+  def deleteVendor() = SecuredAction(WithRole(Admin) ).async { implicit request =>
+    deleteVendorForm.bindFromRequest.fold(
+      form => Future.successful(BadRequest(views.html.deleteVendor(getListVendors.toList, "wrong data", request.identity))),
+      data => {
+        DB.withConnection { conn =>
+          val stmt = conn.prepareStatement(models.sqlStatement.VENDOR_STATE_4)
+          stmt.setString(1, data.name)
+          stmt.execute()
+        }
+        Future.successful(Ok(views.html.deleteVendor(getListVendors.toList, s"Vendor ${data.name} deleted", request
+          .identity)))
+      }
+    )
   }
+
 
 }

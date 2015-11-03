@@ -1,11 +1,12 @@
-@(transactionList:List[PaymentReview])(implicit session: play.api.mvc.Session)
+@(transactionList:List[PaymentReview],user: models.User)(implicit request:RequestHeader,messages: Messages)
 
-@template{
+@main(Messages("home.title"), Some(user)) {
+
 <h1>Denied Transactions</h1>
 <table class="table table-condensed">
     <thead>
     <tr>
-        <th>ID</th>
+        <th>Transaction ID</th>
         <th>Employee</th>
         <th>Vendor</th>
         <th>Amount</th>
@@ -23,6 +24,7 @@
         <td>@transactionList(index).admin</td>
         <td>
             <form action="@routes.PaymentController.approveTransaction(transactionList(index).id,2)" method="post">
+                @helper.CSRF.formField
                 <button class="btn btn-default">Approve</button>
             </form>
         </td>

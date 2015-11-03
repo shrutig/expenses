@@ -1,8 +1,10 @@
-@(vendorList:List[String], message: String)(implicit session: play.api.mvc.Session)
+@(vendorList:List[String], message: String,user: models.User)(implicit request:RequestHeader,messages: Messages)
 
-@template{
+@main(Messages("home.title"), Some(user)) {
+
 <h1>Add Payment</h1>
-<form action="@routes.PaymentController.addTransaction" method="post">
+    @helper.form(action = routes.PaymentController.addTransaction()) {
+    @helper.CSRF.formField
     <div class="form-group">
         <div class="col-xs-3">
             <label>Select Vendor</label>
@@ -24,7 +26,7 @@
             @message
         </div>
     </div>
-</form>
+}
 
 
 }

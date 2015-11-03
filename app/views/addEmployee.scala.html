@@ -1,24 +1,14 @@
-@(message:String)(implicit session: play.api.mvc.Session)
+@(employeeList:List[Employee],message:String,user: models.User)(implicit request:RequestHeader,messages: Messages)
 
-@template{
+@main(Messages("home.title"), Some(user)) {
+
 <h1>Add Employee</h1>
 <form action="@routes.EmployeeController.addEmployee()" method="post">
+    @helper.CSRF.formField
     <div class="form-group">
         <div class="col-xs-3">
-            <label>Name</label>
-            <input name="name" type="text" class="form-control">
-            <label>User Name</label>
-            <input name="userName" type="text" class="form-control">
-            <label>Password</label>
-            <input name="password" type="password" class="form-control">
-            <label>Account No.</label>
-            <input name="accountNo" type="number" class="form-control" min="0">
-            <label>Phone</label>
-            <input name="phone" type="number" class="form-control" min="0">
             <label>Email</label>
             <input name="email" type="email" class="form-control">
-            <label>Address</label>
-            <input name="address" type="text" class="form-control">
             <label>Role</label>
             <select name="role" class="form-control">
                 <option value="super">SuperAdmin</option>
@@ -26,11 +16,27 @@
                 <option value="user">User</option>
             </select>
             <br>
-            <input type="submit" name="Submit" class="form-control">
-            @message
+            <input type="submit" name="Submit" class="btn btn-default">
+            <p> @message</p>
         </div>
     </div>
 </form>
+<table class="table table-condensed">
+
+    <thead>
+
+    <tr>
+        <th>Employee email</th>
+        <th>Employee Role</th>
+    </tr>
+    </thead>
+    @for(index <- 0 until employeeList.size){
+    <tr>
+        <td>@employeeList(index).email</td>
+        <td>@employeeList(index).role</td>
+    </tr>
+    }
+</table>
 
 
 }

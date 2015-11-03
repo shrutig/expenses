@@ -1,0 +1,1132 @@
+2015-10-29 12:23:32,581 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 12:23:32,585 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 12:23:32,586 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:23:32,587 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 12:23:32,587 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 12:23:32,587 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 12:23:32,792 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 12:23:32,792 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 12:23:32,792 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:23:32,792 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:23:32,795 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 12:23:32,799 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 12:23:32,800 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 12:23:32,800 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:23:32,800 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 12:23:32,800 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 12:23:32,801 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 12:23:32,816 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 12:23:32,816 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 12:23:32,816 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:23:32,816 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:23:32,816 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 12:23:32,817 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:23:32,817 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 12:23:32,817 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 12:23:32,817 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 12:23:32,818 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 12:23:32,818 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 12:23:32,818 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:23:32,818 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:23:32,931 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 12:23:32,952 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 12:23:33,007 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 12:23:33,036 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 12:23:33,037 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 12:23:33,037 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 
+2015-10-29 12:23:34,691 INFO  MASTER_LOGGER (BlockMaster.java:getWorkerId) - getWorkerId(): WorkerNetAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999) id: 1
+2015-10-29 12:23:34,828 INFO  MASTER_LOGGER (BlockMaster.java:workerRegister) - registerWorker(): MasterWorkerInfo( ID: 1, mWorkerAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999), TOTAL_BYTES: 4294967296, mUsedBytes: 0, mAvailableBytes: 4294967296, mLastUpdatedTimeMs: 1446101614828, mBlocks: [ ] )
+2015-10-29 12:23:43,610 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline9.csv
+2015-10-29 12:23:44,532 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline9.csv
+2015-10-29 12:23:48,129 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 12:23:48,240 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 12:25:05,074 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 12:25:05,090 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/log.out
+2015-10-29 12:25:35,447 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 12:25:35,448 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 12:25:35,617 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 12:25:35,618 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 12:26:23,170 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 12:26:23,173 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 12:26:23,174 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:26:23,175 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 12:26:23,175 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 12:26:23,176 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 12:26:23,369 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 12:26:23,370 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 12:26:23,370 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:26:23,370 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:26:23,373 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 12:26:23,377 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 12:26:23,378 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 12:26:23,378 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:26:23,378 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 12:26:23,379 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 12:26:23,379 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 12:26:23,395 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 12:26:23,395 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 12:26:23,395 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:26:23,395 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:26:23,395 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 12:26:23,396 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:26:23,396 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 12:26:23,396 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 12:26:23,396 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 12:26:23,397 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 12:26:23,397 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 12:26:23,397 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:26:23,397 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:26:23,489 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 12:26:23,507 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 12:26:23,573 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 12:26:23,599 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 12:26:23,599 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 12:26:23,599 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 
+2015-10-29 12:26:25,234 INFO  MASTER_LOGGER (BlockMaster.java:getWorkerId) - getWorkerId(): WorkerNetAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999) id: 1
+2015-10-29 12:26:25,375 INFO  MASTER_LOGGER (BlockMaster.java:workerRegister) - registerWorker(): MasterWorkerInfo( ID: 1, mWorkerAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999), TOTAL_BYTES: 4294967296, mUsedBytes: 0, mAvailableBytes: 4294967296, mLastUpdatedTimeMs: 1446101785375, mBlocks: [ ] )
+2015-10-29 12:27:38,606 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 12:27:38,609 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 12:27:38,610 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:27:38,611 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 12:27:38,612 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 12:27:38,612 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 12:27:38,814 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 12:27:38,814 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 12:27:38,814 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:27:38,815 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:27:38,818 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 12:27:38,822 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 12:27:38,822 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 12:27:38,823 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:27:38,823 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 12:27:38,823 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 12:27:38,823 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 12:27:38,839 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 12:27:38,839 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 12:27:38,839 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:27:38,839 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:27:38,839 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 12:27:38,839 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:27:38,840 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 12:27:38,840 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 12:27:38,840 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 12:27:38,841 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 12:27:38,841 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 12:27:38,841 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:27:38,841 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:27:38,909 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 12:27:38,926 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 12:27:38,985 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 12:27:39,010 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 12:27:39,010 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 12:27:39,010 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 
+2015-10-29 12:27:40,799 INFO  MASTER_LOGGER (BlockMaster.java:getWorkerId) - getWorkerId(): WorkerNetAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999) id: 1
+2015-10-29 12:27:40,940 INFO  MASTER_LOGGER (BlockMaster.java:workerRegister) - registerWorker(): MasterWorkerInfo( ID: 1, mWorkerAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999), TOTAL_BYTES: 4294967296, mUsedBytes: 0, mAvailableBytes: 4294967296, mLastUpdatedTimeMs: 1446101860940, mBlocks: [ ] )
+2015-10-29 12:28:07,712 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 12:28:57,112 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 12:28:57,126 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/log.out
+2015-10-29 12:29:22,905 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 12:29:22,905 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 12:36:47,545 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 12:36:47,557 INFO  MASTER_LOGGER (InodeTree.java:createPath) - FileAlreadyExistsException: /airline.csv
+2015-10-29 12:36:54,580 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 12:36:54,581 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 12:36:54,747 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 12:36:54,747 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 12:37:28,972 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 12:37:28,973 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 12:37:29,110 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 12:37:29,111 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 12:39:10,182 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 12:39:10,185 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 12:39:10,186 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:39:10,187 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 12:39:10,187 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 12:39:10,187 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 12:39:10,382 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 12:39:10,382 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 12:39:10,382 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:39:10,382 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:39:10,385 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 12:39:10,389 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 12:39:10,390 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 12:39:10,390 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:39:10,390 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 12:39:10,390 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 12:39:10,391 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 12:39:10,406 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 12:39:10,406 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 12:39:10,407 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:39:10,407 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:39:10,407 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 12:39:10,407 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:39:10,407 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 12:39:10,407 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 12:39:10,407 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 12:39:10,408 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 12:39:10,408 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 12:39:10,409 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:39:10,409 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:39:10,476 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 12:39:10,492 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 12:39:10,551 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 12:39:10,576 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 12:39:10,576 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 12:39:10,576 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 
+2015-10-29 12:39:12,319 INFO  MASTER_LOGGER (BlockMaster.java:getWorkerId) - getWorkerId(): WorkerNetAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999) id: 1
+2015-10-29 12:39:12,456 INFO  MASTER_LOGGER (BlockMaster.java:workerRegister) - registerWorker(): MasterWorkerInfo( ID: 1, mWorkerAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999), TOTAL_BYTES: 4294967296, mUsedBytes: 0, mAvailableBytes: 4294967296, mLastUpdatedTimeMs: 1446102552456, mBlocks: [ ] )
+2015-10-29 12:41:36,504 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 12:41:36,507 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 12:41:36,508 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:41:36,509 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 12:41:36,509 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 12:41:36,509 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 12:41:36,713 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 12:41:36,713 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 12:41:36,713 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:41:36,713 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:41:36,717 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 12:41:36,721 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 12:41:36,721 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 12:41:36,721 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:41:36,722 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 12:41:36,722 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 12:41:36,722 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 12:41:36,738 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 12:41:36,738 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 12:41:36,739 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:41:36,739 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:41:36,739 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 12:41:36,739 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:41:36,739 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 12:41:36,739 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 12:41:36,740 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 12:41:36,740 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 12:41:36,741 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 12:41:36,741 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:41:36,741 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:41:36,810 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 12:41:36,827 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 12:41:36,885 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 12:41:36,911 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 12:41:36,911 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 12:41:36,912 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 
+2015-10-29 12:41:38,637 INFO  MASTER_LOGGER (BlockMaster.java:getWorkerId) - getWorkerId(): WorkerNetAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999) id: 1
+2015-10-29 12:41:38,778 INFO  MASTER_LOGGER (BlockMaster.java:workerRegister) - registerWorker(): MasterWorkerInfo( ID: 1, mWorkerAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999), TOTAL_BYTES: 4294967296, mUsedBytes: 0, mAvailableBytes: 4294967296, mLastUpdatedTimeMs: 1446102698777, mBlocks: [ ] )
+2015-10-29 12:41:53,883 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 12:41:54,318 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 12:43:00,962 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 12:43:00,965 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 12:43:00,967 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:43:01,015 INFO  MASTER_LOGGER (JournalWriter.java:completeCurrentLog) - Completed current log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out to completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 12:43:01,016 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: process entire journal before becoming leader master.
+2015-10-29 12:43:01,017 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - BlockMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 12:43:01,017 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 12:43:01,222 INFO  MASTER_LOGGER (JournalReader.java:getNextInputStream) - Opening journal log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 12:43:01,222 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Processing a completed log file.
+2015-10-29 12:43:01,227 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Finished processing the log file.
+2015-10-29 12:43:01,228 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 12:43:01,228 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 2 Next journal sequence number: 3
+2015-10-29 12:43:01,249 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 12:43:01,249 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 12:43:01,250 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:43:01,250 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 12:43:01,250 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:43:01,253 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 12:43:01,257 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 12:43:01,258 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 12:43:01,263 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:43:01,264 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: process entire journal before becoming leader master.
+2015-10-29 12:43:01,264 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - FileSystemMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 12:43:01,264 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 12:43:01,282 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 12:43:01,282 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 2 Next journal sequence number: 3
+2015-10-29 12:43:01,290 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 12:43:01,291 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 12:43:01,291 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:43:01,291 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:43:01,291 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 12:43:01,291 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:43:01,291 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: process entire journal before becoming leader master.
+2015-10-29 12:43:01,291 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - RawTableMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 12:43:01,292 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 12:43:01,292 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 12:43:01,292 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 12:43:01,293 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 12:43:01,293 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 12:43:01,293 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:43:01,293 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:43:01,353 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 12:43:01,368 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 12:43:01,426 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 12:43:01,446 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 12:43:01,446 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 12:43:01,446 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 
+2015-10-29 12:43:03,100 INFO  MASTER_LOGGER (BlockMaster.java:getWorkerId) - getWorkerId(): WorkerNetAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999) id: 1
+2015-10-29 12:43:03,239 INFO  MASTER_LOGGER (BlockMaster.java:workerRegister) - registerWorker(): MasterWorkerInfo( ID: 1, mWorkerAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999), TOTAL_BYTES: 4294967296, mUsedBytes: 0, mAvailableBytes: 4294967296, mLastUpdatedTimeMs: 1446102783239, mBlocks: [ ] )
+2015-10-29 12:44:41,201 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 12:44:41,204 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 12:44:41,205 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:44:41,206 INFO  MASTER_LOGGER (JournalWriter.java:completeCurrentLog) - Completed current log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out to completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 12:44:41,207 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: process entire journal before becoming leader master.
+2015-10-29 12:44:41,207 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - BlockMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 12:44:41,207 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 12:44:41,371 INFO  MASTER_LOGGER (JournalReader.java:getNextInputStream) - Opening journal log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 12:44:41,371 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Processing a completed log file.
+2015-10-29 12:44:41,377 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Finished processing the log file.
+2015-10-29 12:44:41,377 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 12:44:41,377 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 4 Next journal sequence number: 5
+2015-10-29 12:44:41,449 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 12:44:41,449 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 12:44:41,449 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:44:41,450 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 12:44:41,450 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:44:41,453 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 12:44:41,458 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 12:44:41,458 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 12:44:41,464 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:44:41,464 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: process entire journal before becoming leader master.
+2015-10-29 12:44:41,464 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - FileSystemMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 12:44:41,464 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 12:44:41,481 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 12:44:41,481 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 4 Next journal sequence number: 5
+2015-10-29 12:44:41,489 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 12:44:41,490 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 12:44:41,490 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:44:41,490 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:44:41,490 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 12:44:41,490 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:44:41,490 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: process entire journal before becoming leader master.
+2015-10-29 12:44:41,491 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - RawTableMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 12:44:41,491 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 12:44:41,491 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 12:44:41,491 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 12:44:41,492 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 12:44:41,492 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 12:44:41,492 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:44:41,492 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:44:41,554 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 12:44:41,570 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 12:44:41,630 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 12:44:41,652 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 12:44:41,652 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 12:44:41,652 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 
+2015-10-29 12:44:43,345 INFO  MASTER_LOGGER (BlockMaster.java:getWorkerId) - getWorkerId(): WorkerNetAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999) id: 1
+2015-10-29 12:44:43,483 INFO  MASTER_LOGGER (BlockMaster.java:workerRegister) - registerWorker(): MasterWorkerInfo( ID: 1, mWorkerAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999), TOTAL_BYTES: 4294967296, mUsedBytes: 0, mAvailableBytes: 4294967296, mLastUpdatedTimeMs: 1446102883483, mBlocks: [ ] )
+2015-10-29 12:45:34,580 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 12:45:34,596 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/log.out
+2015-10-29 12:49:37,508 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 12:49:37,511 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 12:49:37,513 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:49:37,514 INFO  MASTER_LOGGER (JournalWriter.java:completeCurrentLog) - Completed current log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out to completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 12:49:37,515 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: process entire journal before becoming leader master.
+2015-10-29 12:49:37,515 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - BlockMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 12:49:37,515 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 12:49:37,704 INFO  MASTER_LOGGER (JournalReader.java:getNextInputStream) - Opening journal log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 12:49:37,704 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Processing a completed log file.
+2015-10-29 12:49:37,713 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Finished processing the log file.
+2015-10-29 12:49:37,713 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 12:49:37,714 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 8 Next journal sequence number: 9
+2015-10-29 12:49:37,788 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 12:49:37,788 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 12:49:37,788 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:49:37,788 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 12:49:37,789 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:49:37,792 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 12:49:37,796 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 12:49:37,796 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 12:49:37,802 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:49:37,803 INFO  MASTER_LOGGER (JournalWriter.java:completeCurrentLog) - Completed current log: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/log.out to completed log: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/completed/log.00000000000000000001
+2015-10-29 12:49:37,804 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: process entire journal before becoming leader master.
+2015-10-29 12:49:37,804 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - FileSystemMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 12:49:37,804 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 12:49:37,819 INFO  MASTER_LOGGER (JournalReader.java:getNextInputStream) - Opening journal log file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/completed/log.00000000000000000001
+2015-10-29 12:49:37,819 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - FileSystemMaster: Processing a completed log file.
+2015-10-29 12:49:37,826 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - FileSystemMaster: Finished processing the log file.
+2015-10-29 12:49:37,826 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 12:49:37,827 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 10 Next journal sequence number: 11
+2015-10-29 12:49:37,834 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 12:49:37,835 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 12:49:37,835 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:49:37,835 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting completed log: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/completed/log.00000000000000000001
+2015-10-29 12:49:37,835 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:49:37,835 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 12:49:37,835 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:49:37,835 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: process entire journal before becoming leader master.
+2015-10-29 12:49:37,836 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - RawTableMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 12:49:37,836 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 12:49:37,836 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 12:49:37,836 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 12:49:37,837 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 12:49:37,837 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 12:49:37,837 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:49:37,837 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:49:37,938 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 12:49:37,955 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 12:49:38,014 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 12:49:38,034 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 12:49:38,034 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 12:49:38,034 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 
+2015-10-29 12:57:05,941 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 12:57:05,944 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 12:57:05,945 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:57:05,946 INFO  MASTER_LOGGER (JournalWriter.java:completeCurrentLog) - Completed current log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out to completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 12:57:05,947 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: process entire journal before becoming leader master.
+2015-10-29 12:57:05,948 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - BlockMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 12:57:05,948 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 12:57:06,149 INFO  MASTER_LOGGER (JournalReader.java:getNextInputStream) - Opening journal log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 12:57:06,150 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Processing a completed log file.
+2015-10-29 12:57:06,156 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Finished processing the log file.
+2015-10-29 12:57:06,156 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 12:57:06,156 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 11 Next journal sequence number: 12
+2015-10-29 12:57:06,237 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 12:57:06,238 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 12:57:06,238 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:57:06,238 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 12:57:06,238 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:57:06,243 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 12:57:06,248 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 12:57:06,248 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 12:57:06,255 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:57:06,255 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: process entire journal before becoming leader master.
+2015-10-29 12:57:06,255 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - FileSystemMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 12:57:06,255 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 12:57:06,278 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 12:57:06,278 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 13 Next journal sequence number: 14
+2015-10-29 12:57:06,288 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 12:57:06,288 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 12:57:06,289 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:57:06,289 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:57:06,289 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 12:57:06,289 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 12:57:06,290 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: process entire journal before becoming leader master.
+2015-10-29 12:57:06,290 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - RawTableMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 12:57:06,290 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 12:57:06,290 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 12:57:06,290 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 12:57:06,291 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 12:57:06,291 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 12:57:06,291 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 12:57:06,292 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 12:57:06,355 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 12:57:06,370 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 12:57:06,429 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 12:57:06,448 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 12:57:06,449 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 12:57:06,449 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 
+2015-10-29 12:57:14,895 INFO  MASTER_LOGGER (BlockMaster.java:getWorkerId) - getWorkerId(): WorkerNetAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999) id: 1
+2015-10-29 12:57:15,032 INFO  MASTER_LOGGER (BlockMaster.java:workerRegister) - registerWorker(): MasterWorkerInfo( ID: 1, mWorkerAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999), TOTAL_BYTES: 4294967296, mUsedBytes: 0, mAvailableBytes: 4294967296, mLastUpdatedTimeMs: 1446103635032, mBlocks: [ ] )
+2015-10-29 12:57:49,167 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 12:57:49,179 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 12:57:49,543 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 12:57:49,544 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 12:57:51,447 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 12:57:51,448 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 12:57:51,553 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 12:57:51,554 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:01:49,191 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 13:01:49,196 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 13:01:49,197 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:01:49,198 INFO  MASTER_LOGGER (JournalWriter.java:completeCurrentLog) - Completed current log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out to completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 13:01:49,199 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: process entire journal before becoming leader master.
+2015-10-29 13:01:49,200 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - BlockMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 13:01:49,200 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 13:01:49,387 INFO  MASTER_LOGGER (JournalReader.java:getNextInputStream) - Opening journal log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 13:01:49,387 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Processing a completed log file.
+2015-10-29 13:01:49,394 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Finished processing the log file.
+2015-10-29 13:01:49,394 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 13:01:49,394 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 14 Next journal sequence number: 15
+2015-10-29 13:01:49,479 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 13:01:49,479 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 13:01:49,479 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:01:49,480 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 13:01:49,480 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:01:49,484 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 13:01:49,490 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 13:01:49,490 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 13:01:49,497 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:01:49,497 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: process entire journal before becoming leader master.
+2015-10-29 13:01:49,497 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - FileSystemMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 13:01:49,497 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 13:01:49,525 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 13:01:49,525 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 16 Next journal sequence number: 17
+2015-10-29 13:01:49,535 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 13:01:49,535 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 13:01:49,535 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:01:49,535 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:01:49,536 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 13:01:49,536 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:01:49,536 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: process entire journal before becoming leader master.
+2015-10-29 13:01:49,536 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - RawTableMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 13:01:49,536 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 13:01:49,537 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 13:01:49,537 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 13:01:49,538 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 13:01:49,538 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 13:01:49,538 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:01:49,538 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:01:49,610 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 13:01:49,622 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 13:01:49,682 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 13:01:49,703 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 13:01:49,703 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 13:01:49,703 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 
+2015-10-29 13:01:54,597 INFO  MASTER_LOGGER (BlockMaster.java:getWorkerId) - getWorkerId(): WorkerNetAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999) id: 1
+2015-10-29 13:01:54,734 INFO  MASTER_LOGGER (BlockMaster.java:workerRegister) - registerWorker(): MasterWorkerInfo( ID: 1, mWorkerAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999), TOTAL_BYTES: 12992276070, mUsedBytes: 0, mAvailableBytes: 12992276070, mLastUpdatedTimeMs: 1446103914734, mBlocks: [ ] )
+2015-10-29 13:02:07,213 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 13:02:07,222 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:02:07,568 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 13:02:07,570 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:02:45,575 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 13:02:45,576 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:02:45,723 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 13:02:45,724 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:02:53,695 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 13:02:53,696 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:02:53,780 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 13:02:53,781 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:04:15,824 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 13:04:15,828 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 13:04:15,829 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:04:15,831 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 13:04:15,831 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 13:04:15,832 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 13:04:16,100 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 13:04:16,101 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 13:04:16,101 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:04:16,101 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:04:16,106 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 13:04:16,111 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 13:04:16,111 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 13:04:16,112 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:04:16,112 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 13:04:16,112 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 13:04:16,113 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 13:04:16,135 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 13:04:16,136 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 13:04:16,136 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:04:16,136 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:04:16,136 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 13:04:16,136 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:04:16,137 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 13:04:16,137 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 13:04:16,137 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 13:04:16,138 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 13:04:16,138 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 13:04:16,138 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:04:16,139 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:04:16,207 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 13:04:16,225 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 13:04:16,287 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 13:04:16,315 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 13:04:16,315 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 13:04:16,315 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 
+2015-10-29 13:04:21,023 INFO  MASTER_LOGGER (BlockMaster.java:getWorkerId) - getWorkerId(): WorkerNetAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999) id: 1
+2015-10-29 13:04:21,158 INFO  MASTER_LOGGER (BlockMaster.java:workerRegister) - registerWorker(): MasterWorkerInfo( ID: 1, mWorkerAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999), TOTAL_BYTES: 12992276070, mUsedBytes: 0, mAvailableBytes: 12992276070, mLastUpdatedTimeMs: 1446104061158, mBlocks: [ ] )
+2015-10-29 13:04:35,310 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 13:04:57,722 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 13:04:57,868 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 13:05:12,984 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:05:12,999 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/log.out
+2015-10-29 13:06:17,801 WARN  MASTER_LOGGER (SleepingTimer.java:tick) - Master Lost Worker Detection last execution took 2687 ms. Longer than the interval 1000
+2015-10-29 13:09:45,354 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 13:09:45,379 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 13:09:45,380 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:09:45,592 INFO  MASTER_LOGGER (JournalWriter.java:completeCurrentLog) - Completed current log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out to completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 13:09:45,593 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: process entire journal before becoming leader master.
+2015-10-29 13:09:45,594 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - BlockMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 13:09:45,594 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 13:09:46,047 INFO  MASTER_LOGGER (JournalReader.java:getNextInputStream) - Opening journal log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 13:09:46,067 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Processing a completed log file.
+2015-10-29 13:09:46,073 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Finished processing the log file.
+2015-10-29 13:09:46,073 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 13:09:46,073 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 3 Next journal sequence number: 4
+2015-10-29 13:09:46,095 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 13:09:46,095 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 13:09:46,095 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:09:46,095 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 13:09:46,096 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:09:46,099 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 13:09:46,115 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 13:09:46,116 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 13:09:46,123 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:09:46,198 INFO  MASTER_LOGGER (JournalWriter.java:completeCurrentLog) - Completed current log: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/log.out to completed log: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/completed/log.00000000000000000001
+2015-10-29 13:09:46,198 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: process entire journal before becoming leader master.
+2015-10-29 13:09:46,199 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - FileSystemMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 13:09:46,199 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 13:09:46,243 INFO  MASTER_LOGGER (JournalReader.java:getNextInputStream) - Opening journal log file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/completed/log.00000000000000000001
+2015-10-29 13:09:46,267 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - FileSystemMaster: Processing a completed log file.
+2015-10-29 13:09:46,272 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - FileSystemMaster: Finished processing the log file.
+2015-10-29 13:09:46,272 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 13:09:46,272 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 5 Next journal sequence number: 6
+2015-10-29 13:09:46,281 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 13:09:46,281 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 13:09:46,281 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:09:46,282 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting completed log: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/completed/log.00000000000000000001
+2015-10-29 13:09:46,282 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:09:46,282 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 13:09:46,282 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:09:46,282 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: process entire journal before becoming leader master.
+2015-10-29 13:09:46,282 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - RawTableMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 13:09:46,282 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 13:09:46,283 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 13:09:46,283 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 13:09:46,284 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 13:09:46,284 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 13:09:46,284 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:09:46,284 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:09:46,568 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 13:09:46,581 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 13:09:46,985 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 13:09:47,103 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 13:09:47,104 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 13:09:47,104 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 
+2015-10-29 13:15:19,939 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 13:15:19,942 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 13:15:19,943 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:15:19,944 INFO  MASTER_LOGGER (JournalWriter.java:completeCurrentLog) - Completed current log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out to completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 13:15:19,945 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: process entire journal before becoming leader master.
+2015-10-29 13:15:19,945 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - BlockMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 13:15:19,945 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 13:15:20,150 INFO  MASTER_LOGGER (JournalReader.java:getNextInputStream) - Opening journal log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 13:15:20,150 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Processing a completed log file.
+2015-10-29 13:15:20,159 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Finished processing the log file.
+2015-10-29 13:15:20,160 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 13:15:20,160 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 5 Next journal sequence number: 6
+2015-10-29 13:15:20,255 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 13:15:20,255 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 13:15:20,256 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:15:20,256 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 13:15:20,256 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:15:20,260 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 13:15:20,264 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 13:15:20,264 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 13:15:20,270 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:15:20,271 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: process entire journal before becoming leader master.
+2015-10-29 13:15:20,271 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - FileSystemMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 13:15:20,271 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 13:15:20,291 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 13:15:20,291 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 8 Next journal sequence number: 9
+2015-10-29 13:15:20,299 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 13:15:20,299 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 13:15:20,300 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:15:20,300 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:15:20,300 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 13:15:20,300 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:15:20,300 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: process entire journal before becoming leader master.
+2015-10-29 13:15:20,300 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - RawTableMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 13:15:20,300 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 13:15:20,301 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 13:15:20,301 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 13:15:20,301 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 13:15:20,302 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 13:15:20,302 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:15:20,302 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:15:20,362 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 13:15:20,377 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 13:15:20,434 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 13:15:20,456 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 13:15:20,456 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 13:15:20,456 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 
+2015-10-29 13:16:43,898 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 13:16:43,903 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 13:16:43,904 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:16:43,905 INFO  MASTER_LOGGER (JournalWriter.java:completeCurrentLog) - Completed current log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out to completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 13:16:43,906 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: process entire journal before becoming leader master.
+2015-10-29 13:16:43,906 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - BlockMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 13:16:43,906 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 13:16:44,090 INFO  MASTER_LOGGER (JournalReader.java:getNextInputStream) - Opening journal log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 13:16:44,090 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Processing a completed log file.
+2015-10-29 13:16:44,096 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Finished processing the log file.
+2015-10-29 13:16:44,097 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 13:16:44,097 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 7 Next journal sequence number: 8
+2015-10-29 13:16:44,176 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 13:16:44,177 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 13:16:44,177 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:16:44,177 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 13:16:44,177 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:16:44,182 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 13:16:44,187 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 13:16:44,188 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 13:16:44,195 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:16:44,195 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: process entire journal before becoming leader master.
+2015-10-29 13:16:44,196 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - FileSystemMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 13:16:44,196 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 13:16:44,220 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 13:16:44,220 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 11 Next journal sequence number: 12
+2015-10-29 13:16:44,229 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 13:16:44,230 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 13:16:44,230 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:16:44,230 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:16:44,230 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 13:16:44,230 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:16:44,231 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: process entire journal before becoming leader master.
+2015-10-29 13:16:44,231 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - RawTableMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 13:16:44,231 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 13:16:44,231 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 13:16:44,231 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 13:16:44,232 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 13:16:44,233 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 13:16:44,233 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:16:44,233 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:16:44,300 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 13:16:44,315 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 13:16:44,374 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 13:16:44,396 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 13:16:44,397 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 13:16:44,397 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 
+2015-10-29 13:20:13,163 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 13:20:13,167 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 13:20:13,168 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:20:13,169 INFO  MASTER_LOGGER (JournalWriter.java:completeCurrentLog) - Completed current log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out to completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 13:20:13,170 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: process entire journal before becoming leader master.
+2015-10-29 13:20:13,170 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - BlockMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 13:20:13,170 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 13:20:13,357 INFO  MASTER_LOGGER (JournalReader.java:getNextInputStream) - Opening journal log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 13:20:13,358 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Processing a completed log file.
+2015-10-29 13:20:13,363 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Finished processing the log file.
+2015-10-29 13:20:13,364 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 13:20:13,364 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 9 Next journal sequence number: 10
+2015-10-29 13:20:13,443 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 13:20:13,444 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 13:20:13,444 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:20:13,444 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 13:20:13,444 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:20:13,448 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 13:20:13,452 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 13:20:13,453 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 13:20:13,460 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:20:13,460 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: process entire journal before becoming leader master.
+2015-10-29 13:20:13,460 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - FileSystemMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 13:20:13,460 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 13:20:13,486 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 13:20:13,486 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 14 Next journal sequence number: 15
+2015-10-29 13:20:13,496 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 13:20:13,496 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 13:20:13,496 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:20:13,496 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:20:13,496 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 13:20:13,497 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:20:13,497 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: process entire journal before becoming leader master.
+2015-10-29 13:20:13,497 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - RawTableMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 13:20:13,497 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 13:20:13,497 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 13:20:13,497 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 13:20:13,498 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 13:20:13,499 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 13:20:13,499 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:20:13,499 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:20:13,578 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 13:20:13,596 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 13:20:13,655 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 13:20:13,676 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 13:20:13,676 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 13:20:13,676 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 
+2015-10-29 13:20:48,014 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 13:20:48,018 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 13:20:48,019 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:20:48,020 INFO  MASTER_LOGGER (JournalWriter.java:completeCurrentLog) - Completed current log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out to completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 13:20:48,021 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: process entire journal before becoming leader master.
+2015-10-29 13:20:48,022 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - BlockMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 13:20:48,022 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 13:20:48,220 INFO  MASTER_LOGGER (JournalReader.java:getNextInputStream) - Opening journal log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 13:20:48,221 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Processing a completed log file.
+2015-10-29 13:20:48,229 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Finished processing the log file.
+2015-10-29 13:20:48,230 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 13:20:48,230 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 11 Next journal sequence number: 12
+2015-10-29 13:20:48,326 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 13:20:48,326 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 13:20:48,326 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:20:48,327 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 13:20:48,327 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:20:48,332 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 13:20:48,337 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 13:20:48,338 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 13:20:48,346 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:20:48,346 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: process entire journal before becoming leader master.
+2015-10-29 13:20:48,346 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - FileSystemMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 13:20:48,346 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 13:20:48,374 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 13:20:48,374 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 17 Next journal sequence number: 18
+2015-10-29 13:20:48,382 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 13:20:48,383 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 13:20:48,383 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:20:48,383 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:20:48,383 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 13:20:48,383 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:20:48,383 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: process entire journal before becoming leader master.
+2015-10-29 13:20:48,383 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - RawTableMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 13:20:48,383 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 13:20:48,384 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 13:20:48,384 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 13:20:48,385 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 13:20:48,385 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 13:20:48,385 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:20:48,385 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:20:48,445 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 13:20:48,460 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 13:20:48,518 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 13:20:48,541 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 13:20:48,541 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 13:20:48,541 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 
+2015-10-29 13:20:57,253 INFO  MASTER_LOGGER (BlockMaster.java:getWorkerId) - getWorkerId(): WorkerNetAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999) id: 1
+2015-10-29 13:20:57,398 INFO  MASTER_LOGGER (BlockMaster.java:workerRegister) - registerWorker(): MasterWorkerInfo( ID: 1, mWorkerAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999), TOTAL_BYTES: 4402341478, mUsedBytes: 0, mAvailableBytes: 4402341478, mLastUpdatedTimeMs: 1446105057398, mBlocks: [ ] )
+2015-10-29 13:24:07,675 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 13:24:07,678 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 13:24:07,679 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:24:07,681 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 13:24:07,681 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 13:24:07,681 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 13:24:07,921 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 13:24:07,922 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 13:24:07,922 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:24:07,922 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:24:07,926 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 13:24:07,932 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 13:24:07,933 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 13:24:07,933 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:24:07,933 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 13:24:07,933 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 13:24:07,934 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 13:24:07,972 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 13:24:07,972 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 13:24:07,972 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:24:07,972 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:24:07,973 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 13:24:07,973 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:24:07,973 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 13:24:07,973 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 13:24:07,973 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 13:24:07,974 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 13:24:07,974 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 13:24:07,974 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:24:07,975 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:24:08,058 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 13:24:08,080 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 13:24:08,140 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 13:24:08,167 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 13:24:08,167 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 13:24:08,167 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 
+2015-10-29 13:24:16,229 INFO  MASTER_LOGGER (BlockMaster.java:getWorkerId) - getWorkerId(): WorkerNetAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999) id: 1
+2015-10-29 13:24:16,381 INFO  MASTER_LOGGER (BlockMaster.java:workerRegister) - registerWorker(): MasterWorkerInfo( ID: 1, mWorkerAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999), TOTAL_BYTES: 3328599654, mUsedBytes: 0, mAvailableBytes: 3328599654, mLastUpdatedTimeMs: 1446105256381, mBlocks: [ ] )
+2015-10-29 13:29:57,614 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:29:57,632 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/log.out
+2015-10-29 13:51:34,103 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:51:34,380 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:53:31,174 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 13:53:31,174 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:53:31,670 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 13:53:31,670 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:53:36,236 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:53:36,407 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:53:40,087 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 13:53:40,088 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:53:40,190 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 13:53:40,192 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:53:41,643 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:53:41,669 INFO  MASTER_LOGGER (ClientBase.java:connect) - Tachyon client (version 0.8.0) is trying to connect with FileSystemMaster master @ localhost/127.0.0.1:19998
+2015-10-29 13:53:41,671 INFO  MASTER_LOGGER (ClientBase.java:connect) - Client registered with FileSystemMaster master @ localhost/127.0.0.1:19998
+2015-10-29 13:53:41,697 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:53:41,699 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:53:41,700 INFO  MASTER_LOGGER (ClientBase.java:connect) - Tachyon client (version 0.8.0) is trying to connect with BlockMaster master @ localhost/127.0.0.1:19998
+2015-10-29 13:53:41,701 INFO  MASTER_LOGGER (ClientBase.java:connect) - Client registered with BlockMaster master @ localhost/127.0.0.1:19998
+2015-10-29 13:53:41,714 INFO  MASTER_LOGGER (ClientBase.java:connect) - Tachyon client (version 0.8.0) is trying to connect with BlockMaster master @ localhost/127.0.0.1:19998
+2015-10-29 13:53:41,714 INFO  MASTER_LOGGER (ClientBase.java:connect) - Client registered with BlockMaster master @ localhost/127.0.0.1:19998
+2015-10-29 13:53:41,724 INFO  MASTER_LOGGER (WorkerClient.java:connect) - Connecting local worker @ /192.168.1.7:29998
+2015-10-29 13:53:41,762 ERROR MASTER_LOGGER (FileInStream.java:updateBlockInStream) - Could not obtain data for 16777216 from Tachyon and data is not persisted in under storage.
+2015-10-29 13:53:41,902 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:53:41,904 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:53:41,905 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /airline.csv
+2015-10-29 13:53:41,920 ERROR MASTER_LOGGER (FileInStream.java:updateBlockInStream) - Could not obtain data for 16777216 from Tachyon and data is not persisted in under storage.
+2015-10-29 13:57:32,808 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 13:57:32,812 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 13:57:32,813 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:57:32,814 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 13:57:32,815 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 13:57:32,815 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 13:57:33,063 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 13:57:33,064 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 13:57:33,064 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:57:33,064 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:57:33,068 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 13:57:33,073 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 13:57:33,074 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 13:57:33,075 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:57:33,075 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 13:57:33,075 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 13:57:33,076 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 13:57:33,094 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 13:57:33,094 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 13:57:33,095 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:57:33,095 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:57:33,095 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 13:57:33,095 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 13:57:33,095 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: journal checkpoint does not exist, nothing to process.
+2015-10-29 13:57:33,096 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 13:57:33,096 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 13:57:33,097 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 13:57:33,097 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 13:57:33,097 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 13:57:33,097 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 13:57:33,218 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 13:57:33,239 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 13:57:33,294 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 13:57:33,322 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 13:57:33,322 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 13:57:33,322 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 
+2015-10-29 13:57:46,719 INFO  MASTER_LOGGER (BlockMaster.java:getWorkerId) - getWorkerId(): WorkerNetAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999) id: 1
+2015-10-29 13:57:46,863 INFO  MASTER_LOGGER (BlockMaster.java:workerRegister) - registerWorker(): MasterWorkerInfo( ID: 1, mWorkerAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999), TOTAL_BYTES: 3328599654, mUsedBytes: 0, mAvailableBytes: 3328599654, mLastUpdatedTimeMs: 1446107266863, mBlocks: [ ] )
+2015-10-29 13:58:19,104 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 13:58:46,758 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 13:58:46,888 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 13:59:10,679 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 13:59:10,835 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 14:08:47,909 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 14:08:47,912 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 14:08:47,914 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 14:08:47,987 INFO  MASTER_LOGGER (JournalWriter.java:completeCurrentLog) - Completed current log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out to completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 14:08:47,988 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: process entire journal before becoming leader master.
+2015-10-29 14:08:47,989 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - BlockMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 14:08:47,989 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 14:08:48,190 INFO  MASTER_LOGGER (JournalReader.java:getNextInputStream) - Opening journal log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 14:08:48,190 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Processing a completed log file.
+2015-10-29 14:08:48,196 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Finished processing the log file.
+2015-10-29 14:08:48,197 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 14:08:48,197 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 2 Next journal sequence number: 3
+2015-10-29 14:08:48,224 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 14:08:48,224 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 14:08:48,225 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 14:08:48,225 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 14:08:48,225 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 14:08:48,229 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 14:08:48,235 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 14:08:48,236 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 14:08:48,243 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 14:08:48,243 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: process entire journal before becoming leader master.
+2015-10-29 14:08:48,243 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - FileSystemMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 14:08:48,243 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 14:08:48,268 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 14:08:48,269 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 2 Next journal sequence number: 3
+2015-10-29 14:08:48,277 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 14:08:48,277 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 14:08:48,277 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 14:08:48,277 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 14:08:48,277 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 14:08:48,277 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 14:08:48,277 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: process entire journal before becoming leader master.
+2015-10-29 14:08:48,277 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - RawTableMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 14:08:48,278 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 14:08:48,278 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 14:08:48,278 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 14:08:48,279 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 14:08:48,279 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 14:08:48,279 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 14:08:48,279 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 14:08:48,344 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 14:08:48,359 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 14:08:48,423 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 14:08:48,445 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 14:08:48,445 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 14:08:48,446 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 
+2015-10-29 14:09:31,838 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 14:09:37,052 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 14:09:37,196 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 14:09:44,169 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 14:09:44,319 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 14:09:48,295 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 14:09:48,399 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 14:09:49,971 INFO  MASTER_LOGGER (MountTable.java:resolve) - Resolving /
+2015-10-29 14:13:07,143 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 14:13:07,146 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 14:13:07,148 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 14:13:07,148 INFO  MASTER_LOGGER (JournalWriter.java:completeCurrentLog) - Completed current log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out to completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 14:13:07,149 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: process entire journal before becoming leader master.
+2015-10-29 14:13:07,150 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - BlockMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 14:13:07,150 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 14:13:07,326 INFO  MASTER_LOGGER (JournalReader.java:getNextInputStream) - Opening journal log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 14:13:07,326 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Processing a completed log file.
+2015-10-29 14:13:07,332 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Finished processing the log file.
+2015-10-29 14:13:07,332 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 14:13:07,332 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 4 Next journal sequence number: 5
+2015-10-29 14:13:07,417 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 14:13:07,417 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 14:13:07,418 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 14:13:07,418 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 14:13:07,418 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 14:13:07,423 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 14:13:07,428 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 14:13:07,429 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 14:13:07,438 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 14:13:07,438 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: process entire journal before becoming leader master.
+2015-10-29 14:13:07,438 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - FileSystemMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 14:13:07,438 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 14:13:07,462 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 14:13:07,463 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 4 Next journal sequence number: 5
+2015-10-29 14:13:07,471 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 14:13:07,471 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 14:13:07,471 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 14:13:07,471 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 14:13:07,471 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 14:13:07,472 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 14:13:07,472 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: process entire journal before becoming leader master.
+2015-10-29 14:13:07,472 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - RawTableMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 14:13:07,472 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 14:13:07,472 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 14:13:07,472 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 14:13:07,473 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 14:13:07,474 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 14:13:07,474 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 14:13:07,474 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 14:13:07,546 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 14:13:07,561 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 14:13:07,621 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 14:13:07,643 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 14:13:07,643 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 14:13:07,643 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 
+2015-10-29 14:13:14,859 INFO  MASTER_LOGGER (BlockMaster.java:getWorkerId) - getWorkerId(): WorkerNetAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999) id: 1
+2015-10-29 14:13:15,007 INFO  MASTER_LOGGER (BlockMaster.java:workerRegister) - registerWorker(): MasterWorkerInfo( ID: 1, mWorkerAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999), TOTAL_BYTES: 3328599654, mUsedBytes: 0, mAvailableBytes: 3328599654, mLastUpdatedTimeMs: 1446108195006, mBlocks: [ ] )
+2015-10-29 14:27:07,225 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 14:27:07,229 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 14:27:07,230 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 14:27:07,231 INFO  MASTER_LOGGER (JournalWriter.java:completeCurrentLog) - Completed current log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out to completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 14:27:07,232 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: process entire journal before becoming leader master.
+2015-10-29 14:27:07,232 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - BlockMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 14:27:07,233 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 14:27:07,420 INFO  MASTER_LOGGER (JournalReader.java:getNextInputStream) - Opening journal log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 14:27:07,421 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Processing a completed log file.
+2015-10-29 14:27:07,427 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Finished processing the log file.
+2015-10-29 14:27:07,427 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 14:27:07,428 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 6 Next journal sequence number: 7
+2015-10-29 14:27:07,514 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 14:27:07,514 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 14:27:07,514 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 14:27:07,515 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 14:27:07,515 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 14:27:07,519 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 14:27:07,524 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 14:27:07,525 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 14:27:07,531 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 14:27:07,532 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: process entire journal before becoming leader master.
+2015-10-29 14:27:07,532 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - FileSystemMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 14:27:07,532 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 14:27:07,554 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 14:27:07,554 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 6 Next journal sequence number: 7
+2015-10-29 14:27:07,563 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 14:27:07,564 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 14:27:07,564 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 14:27:07,564 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 14:27:07,564 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 14:27:07,564 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 14:27:07,564 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: process entire journal before becoming leader master.
+2015-10-29 14:27:07,564 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - RawTableMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 14:27:07,565 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 14:27:07,565 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 14:27:07,565 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 14:27:07,566 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 14:27:07,566 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 14:27:07,566 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 14:27:07,566 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 14:27:07,636 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 14:27:07,652 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 14:27:07,712 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 14:27:07,734 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 14:27:07,735 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 14:27:07,736 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 
+2015-10-29 14:27:14,973 INFO  MASTER_LOGGER (BlockMaster.java:getWorkerId) - getWorkerId(): WorkerNetAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999) id: 1
+2015-10-29 14:27:15,112 INFO  MASTER_LOGGER (BlockMaster.java:workerRegister) - registerWorker(): MasterWorkerInfo( ID: 1, mWorkerAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999), TOTAL_BYTES: 3328599654, mUsedBytes: 0, mAvailableBytes: 3328599654, mLastUpdatedTimeMs: 1446109035112, mBlocks: [ ] )
+2015-10-29 14:29:02,404 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 14:29:02,407 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 14:29:02,409 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 14:29:02,409 INFO  MASTER_LOGGER (JournalWriter.java:completeCurrentLog) - Completed current log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out to completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 14:29:02,411 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: process entire journal before becoming leader master.
+2015-10-29 14:29:02,411 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - BlockMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 14:29:02,411 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 14:29:02,600 INFO  MASTER_LOGGER (JournalReader.java:getNextInputStream) - Opening journal log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 14:29:02,601 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Processing a completed log file.
+2015-10-29 14:29:02,607 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Finished processing the log file.
+2015-10-29 14:29:02,608 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 14:29:02,608 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 8 Next journal sequence number: 9
+2015-10-29 14:29:02,694 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 14:29:02,694 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 14:29:02,694 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 14:29:02,695 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 14:29:02,695 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 14:29:02,698 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 14:29:02,703 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 14:29:02,703 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 14:29:02,709 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 14:29:02,709 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: process entire journal before becoming leader master.
+2015-10-29 14:29:02,709 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - FileSystemMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 14:29:02,709 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 14:29:02,726 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 14:29:02,726 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 8 Next journal sequence number: 9
+2015-10-29 14:29:02,734 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 14:29:02,734 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 14:29:02,734 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 14:29:02,735 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 14:29:02,735 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 14:29:02,735 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 14:29:02,735 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: process entire journal before becoming leader master.
+2015-10-29 14:29:02,735 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - RawTableMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 14:29:02,735 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 14:29:02,735 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 14:29:02,736 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 14:29:02,736 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 14:29:02,737 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 14:29:02,737 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 14:29:02,737 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 14:29:02,798 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 14:29:02,814 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 14:29:02,873 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 14:29:02,894 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 14:29:02,895 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 14:29:02,895 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 
+2015-10-29 14:29:37,168 INFO  MASTER_LOGGER (BlockMaster.java:getWorkerId) - getWorkerId(): WorkerNetAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999) id: 1
+2015-10-29 14:29:37,306 INFO  MASTER_LOGGER (BlockMaster.java:workerRegister) - registerWorker(): MasterWorkerInfo( ID: 1, mWorkerAddress: NetAddress(host:192.168.1.7, rpcPort:29998, dataPort:29999), TOTAL_BYTES: 3328599654, mUsedBytes: 0, mAvailableBytes: 3328599654, mLastUpdatedTimeMs: 1446109177306, mBlocks: [ ] )
+2015-10-29 14:31:51,468 ERROR MASTER_LOGGER (MetricsConfig.java:loadConfigFile) - Error loading metrics configuration file.
+2015-10-29 14:31:51,471 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: Starting leader master.
+2015-10-29 14:31:51,472 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 14:31:51,473 INFO  MASTER_LOGGER (JournalWriter.java:completeCurrentLog) - Completed current log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out to completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 14:31:51,474 INFO  MASTER_LOGGER (MasterBase.java:start) - BlockMaster: process entire journal before becoming leader master.
+2015-10-29 14:31:51,474 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - BlockMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 14:31:51,475 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 14:31:51,658 INFO  MASTER_LOGGER (JournalReader.java:getNextInputStream) - Opening journal log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 14:31:51,658 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Processing a completed log file.
+2015-10-29 14:31:51,664 INFO  MASTER_LOGGER (JournalTailer.java:processNextJournalLogFiles) - BlockMaster: Finished processing the log file.
+2015-10-29 14:31:51,664 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 14:31:51,664 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 10 Next journal sequence number: 11
+2015-10-29 14:31:51,745 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp
+2015-10-29 14:31:51,746 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/checkpoint.data
+2015-10-29 14:31:51,746 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 14:31:51,746 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting completed log: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/completed/log.00000000000000000001
+2015-10-29 14:31:51,747 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 14:31:51,751 INFO  MASTER_LOGGER (JournalWriter.java:openCurrentLog) - Opened current log file: /home/shruti/Documents/tachyon-0.8.0/journal/BlockMaster/log.out
+2015-10-29 14:31:51,756 INFO  MASTER_LOGGER (MountTable.java:add) - Mounting /home at /
+2015-10-29 14:31:51,757 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: Starting leader master.
+2015-10-29 14:31:51,763 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 14:31:51,763 INFO  MASTER_LOGGER (MasterBase.java:start) - FileSystemMaster: process entire journal before becoming leader master.
+2015-10-29 14:31:51,763 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - FileSystemMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 14:31:51,764 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 14:31:51,787 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 14:31:51,787 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 10 Next journal sequence number: 11
+2015-10-29 14:31:51,795 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp
+2015-10-29 14:31:51,796 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/FileSystemMaster/checkpoint.data
+2015-10-29 14:31:51,796 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 14:31:51,796 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 14:31:51,796 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: Starting leader master.
+2015-10-29 14:31:51,796 INFO  MASTER_LOGGER (JournalWriter.java:completeAllLogs) - Marking all logs as complete.
+2015-10-29 14:31:51,796 INFO  MASTER_LOGGER (MasterBase.java:start) - RawTableMaster: process entire journal before becoming leader master.
+2015-10-29 14:31:51,796 INFO  MASTER_LOGGER (JournalTailer.java:processJournalCheckpoint) - RawTableMaster: Loading checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 14:31:51,797 INFO  MASTER_LOGGER (JournalReader.java:getCheckpointInputStream) - Opening journal checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 14:31:51,797 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Creating tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 14:31:51,797 INFO  MASTER_LOGGER (JournalWriter.java:getCheckpointOutputStream) - Latest journal sequence number: 0 Next journal sequence number: 1
+2015-10-29 14:31:51,798 INFO  MASTER_LOGGER (JournalWriter.java:close) - Successfully created tmp checkpoint file: /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp
+2015-10-29 14:31:51,798 INFO  MASTER_LOGGER (JournalWriter.java:close) - Renamed checkpoint file /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data.tmp to /home/shruti/Documents/tachyon-0.8.0/journal/RawTableMaster/checkpoint.data
+2015-10-29 14:31:51,798 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Deleting all completed log files...
+2015-10-29 14:31:51,798 INFO  MASTER_LOGGER (JournalWriter.java:deleteCompletedLogs) - Finished deleting all completed log files.
+2015-10-29 14:31:52,214 INFO  server.Server (Server.java:doStart) - jetty-7.x.y-SNAPSHOT
+2015-10-29 14:31:52,233 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.s.ServletContextHandler{/metrics/json,null}
+2015-10-29 14:31:52,301 INFO  handler.ContextHandler (ContextHandler.java:startContext) - started o.e.j.w.WebAppContext{/,file:/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp/},/home/shruti/Documents/tachyon-0.8.0/servers/src/main/webapp
+2015-10-29 14:31:52,320 INFO  server.AbstractConnector (AbstractConnector.java:doStart) - Started SelectChannelConnector@0.0.0.0:19999
+2015-10-29 14:31:52,320 INFO  MASTER_LOGGER (UIWebServer.java:startWebServer) - Tachyon Master Web service started @ 0.0.0.0/0.0.0.0:19999
+2015-10-29 14:31:52,320 INFO  MASTER_LOGGER (TachyonMaster.java:startServing) - Tachyon Master version 0.8.0 started @ localhost/127.0.0.1:19998 

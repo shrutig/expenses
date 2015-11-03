@@ -1,33 +1,36 @@
-GET	/		controllers.LoginController.login
-GET	/home		controllers.LoginController.home
-GET     /employee	controllers.EmployeeController.employee
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET         /                                controllers.ApplicationController.index
+GET         /signIn                          controllers.ApplicationController.signIn
+GET         /signOut                         controllers.ApplicationController.signOut
+GET         /authenticate/:provider          controllers.SocialAuthController.authenticate(provider)
+
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET         /assets/*file                    controllers.Assets.at(path="/public", file)
+GET         /webjars/*file                   controllers.WebJarAssets.at(file)
+
+
 GET     /vendor		controllers.VendorController.vendor
 GET     /pay		controllers.PaymentController.payment
 GET	/reviewPay	controllers.PaymentController.reviewPayments
-GET	/logout		controllers.LoginController.logout
 GET	/getFile	controllers.PaymentController.getFile
 GET /getReceipt/:fileName  controllers.PaymentController.getReceipt(fileName:String)
-GET	/editProfile	controllers.EmployeeController.editProfile
-GET	/changePassword	controllers.EmployeeController.changePassword
-GET	/deleteEmployee	controllers.EmployeeController.viewDeleteEmployee
 GET	/deleteVendor	controllers.VendorController.viewDeleteVendor
 GET	/deniedTransactions	controllers.PaymentController.viewDeniedTransactions
 GET /acceptedTransactions controllers.PaymentController.viewAcceptedTransactions
 GET /processedTransactions controllers.PaymentController.viewProcessedTransactions
-
-POST    /authenticate	controllers.LoginController.authenticate
-POST	/employee   	controllers.EmployeeController.addEmployee
+GET     /employee	controllers.EmployeeController.employee
 POST    /vendor 	controllers.VendorController.addVendor
 POST	/pay		controllers.PaymentController.addTransaction
-POST	/deleteEmployee	controllers.EmployeeController.deleteEmployee
+POST	/employee   	controllers.EmployeeController.addEmployee
 POST	/deleteVendor	controllers.VendorController.deleteVendor
-POST	/updatePassword	controllers.EmployeeController.updatePassword
-POST	/updateProfile	controllers.EmployeeController.updateProfile
 POST	/approve/:id/:choice	controllers.PaymentController.approveTransaction(id:Int,choice:Int)
 POST	/deny/:id	controllers.PaymentController.denyTransaction(id:Int)
 POST    /process/:id  controllers.PaymentController.processTransaction(id:Int)
 
-# Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
-GET     /webjars/*file                    controllers.WebJarAssets.at(file)
 POST    /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

@@ -1,16 +1,18 @@
-@(transactionList:List[PaymentReview],message:String)(implicit session: play.api.mvc.Session)
+@(transactionList:List[PaymentReview],message:String,user: models.User)(implicit request:RequestHeader,messages: Messages)
 
-@template{
+@main(Messages("home.title"), Some(user)) {
+
 <h1>Accepted Transactions</h1>
 @message
 <table class="table table-condensed">
     <thead>
     <tr>
-        <th>ID</th>
+        <th>Transaction ID</th>
         <th>Employee</th>
         <th>Vendor</th>
         <th>Amount</th>
         <th>Description</th>
+        <th>Approved by</th>
     </tr>
     </thead>
     @for(index <- 0 until transactionList.size){
@@ -20,10 +22,11 @@
         <td>@transactionList(index).vendor</td>
         <td>@transactionList(index).amount</td>
         <td>@transactionList(index).description</td>
+        <td>@transactionList(index).admin</td>
         <td>
             <form action="@routes.PaymentController.processTransaction(transactionList(index).id)" enctype =
             "multipart/form-data" method="post">
-
+                @helper.CSRF.formField
                     <input name="receipt" type="file" class="upload">
                     <input type="submit" name="Processed" class="upload">
 
