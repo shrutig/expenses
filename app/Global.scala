@@ -18,8 +18,8 @@ object Global extends GlobalSettings {
 
   override def onStart(app: Application): Unit = {
     val START_STATE_1= "select count(*) from employee where role = 'super';"
-    val START_STATE_2= "INSERT INTO employee VALUES('shruti.gumma@tuplejump.com','super');"
-    val START_STATE_3= "update employee set role='super' where userName='shruti.gumma@tuplejump.com';"
+    val START_STATE_2= "INSERT INTO employee VALUES('','super');"
+    val START_STATE_3= "update employee set role='super' where userName='';"
     DB.withConnection { conn =>
       val stmt = conn.prepareStatement(START_STATE_1)
       val rs = stmt.executeQuery()
