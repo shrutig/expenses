@@ -2,8 +2,6 @@ package controllers
 
 import javax.inject.Inject
 
-import javax.inject.Inject
-
 import com.mohiva.play.silhouette.api._
 import com.mohiva.play.silhouette.api.exceptions.ProviderException
 import com.mohiva.play.silhouette.api.repositories.AuthInfoRepository
@@ -16,6 +14,7 @@ import play.api.libs.concurrent.Execution.Implicits._
 import play.api.mvc.Action
 
 import scala.concurrent.Future
+
 /**
  * The social auth controller.
  *
@@ -45,7 +44,6 @@ class SocialAuthController @Inject()(
         p.authenticate().flatMap {
           case Left(result) => Future.successful(result)
           case Right(authInfo) =>
-
             for {
               profile <- p.retrieveProfile(authInfo)
               user <- userService.save(profile)

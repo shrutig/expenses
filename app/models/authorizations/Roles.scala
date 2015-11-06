@@ -61,23 +61,23 @@ object Role {
 
   def setRoleForUser(email: String, role: String) = {
 
-        val userRole = getRoleForUser(email)
-        if (userRole.equals(Unknown)) {
-          DB.withConnection { conn =>
-            val stmt = conn.prepareStatement(models.sqlStatement.EMP_STATE_1)
-            stmt.setString(1, email)
-            stmt.setString(2, role)
-            stmt.executeUpdate()
-          }
-        }
-        else {
-          DB.withConnection { conn =>
-            val stmt = conn.prepareStatement(models.sqlStatement.EMP_STATE_3)
-            stmt.setString(1, role)
-            stmt.setString(2, email)
-            stmt.executeUpdate()
-          }
-        }
+    val userRole = getRoleForUser(email)
+    if (userRole.equals(Unknown)) {
+      DB.withConnection { conn =>
+        val stmt = conn.prepareStatement(models.sqlStatement.EMP_STATE_1)
+        stmt.setString(1, email)
+        stmt.setString(2, role)
+        stmt.executeUpdate()
+      }
+    }
+    else {
+      DB.withConnection { conn =>
+        val stmt = conn.prepareStatement(models.sqlStatement.EMP_STATE_3)
+        stmt.setString(1, role)
+        stmt.setString(2, email)
+        stmt.executeUpdate()
+      }
+    }
   }
 
 

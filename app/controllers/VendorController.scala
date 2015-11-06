@@ -29,46 +29,51 @@ class VendorController @Inject()(
   private val ACCOUNT_NO = "accountNo"
   private val BANK_DETAIL = "bankDetail"
 
-  def vendor = SecuredAction(WithRole(Admin) ) { implicit request =>
+  def vendor = SecuredAction(WithRole(Admin)) { implicit request =>
     Ok(views.html.addVendor(vendorForm, "", request.identity))
   }
 
-  val vendorForm = Form(mapping(NAME -> text(maxLength = 20), PHONE -> number(min = 0), ACCOUNT_NO -> number(min = 0),
+  val vendorForm = Form(mapping(NAME -> text(maxLength = 20), PHONE -> text(maxLength = 30), ACCOUNT_NO -> text(maxLength = 30),
     BANK_DETAIL -> text(maxLength = 30), ADDRESS -> text(maxLength = 20), DESCRIPTION -> text(maxLength = 30))(Vendor
     .apply)(Vendor.unapply))
 
-  def addVendor() = SecuredAction(WithRole(Admin) ).async { implicit request =>
+  def addVendor() = SecuredAction(WithRole(Admin)).async { implicit request =>
     vendorForm.bindFromRequest.fold(
       form => Future.successful(BadRequest(views.html.addVendor(vendorForm, "wrong data", request.identity))),
       data => {
-        DB.withConnection { conn =>
-          val stmt1 = conn.prepareStatement(models.sqlStatement.VENDOR_STATE_5)
-          stmt1.setString(1,data.name)
-          val rs = stmt1.executeQuery()
-          if(rs.next()){
-            if(rs.getInt(1) == 0){
-              val stmt = conn.prepareStatement(models.sqlStatement.VENDOR_STATE_1)
-              stmt.setString(1, data.name)
-              stmt.setInt(2, data.phone)
-              stmt.setInt(3, data.accountNo)
-              stmt.setString(4, data.bankDetail)
-              stmt.setString(5, data.address)
-              stmt.setString(6, data.description)
-              stmt.executeUpdate()
-              Future.successful(Ok(views.html.addVendor(vendorForm, s"Vendor Information of ${data.name}  Added", request.identity)))
+        if ((data.phone matches "^[0-9]+$") && (data.accountNo matches "^[0-9]+$")) {
+          DB.withConnection { conn =>
+            val stmt1 = conn.prepareStatement(models.sqlStatement.VENDOR_STATE_5)
+            stmt1.setString(1, data.name)
+            val rs = stmt1.executeQuery()
+            if (rs.next()) {
+              if (rs.getInt(1) == 0) {
+                val stmt = conn.prepareStatement(models.sqlStatement.VENDOR_STATE_1)
+                stmt.setString(1, data.name)
+                stmt.setString(2, data.phone)
+                stmt.setString(3, data.accountNo)
+                stmt.setString(4, data.bankDetail)
+                stmt.setString(5, data.address)
+                stmt.setString(6, data.description)
+                stmt.executeUpdate()
+                Future.successful(Ok(views.html.addVendor(vendorForm, s"Vendor Information of ${data.name}  Added", request.identity)))
+              }
+              else
+                Future.successful(BadRequest(views.html.addVendor(vendorForm, "vendor already exists", request.identity)))
             }
             else
-              Future.successful(BadRequest(views.html.addVendor(vendorForm, "vendor already exists", request.identity)))
+              Future.successful(BadRequest(views.html.addVendor(vendorForm, "wrong data", request.identity)))
           }
-          else
-            Future.successful(BadRequest(views.html.addVendor(vendorForm, "wrong data", request.identity)))
         }
+        else
+          Future.successful(BadRequest(views.html.addVendor(vendorForm, "phone and accountNo not numbers or empty",
+            request.identity)))
       }
     )
   }
 
 
-  def viewDeleteVendor = SecuredAction(WithRole(Admin) ).async { implicit request =>
+  def viewDeleteVendor = SecuredAction(WithRole(Admin)).async { implicit request =>
     Future.successful(Ok(views.html.deleteVendor(getListVendors.toList, "", request.identity)))
   }
 
@@ -78,8 +83,8 @@ class VendorController @Inject()(
       val stmt = conn.prepareStatement(models.sqlStatement.VENDOR_STATE_2)
       val rs = stmt.executeQuery()
       while (rs.next())
-        vendorList += Vendor(rs.getString(NAME), rs.getInt(PHONE), rs.getInt(ACCOUNT_NO), rs.getString(BANK_DETAIL), rs
-          .getString(ADDRESS), rs.getString(DESCRIPTION))
+        vendorList += Vendor(rs.getString(NAME), rs.getString(PHONE), rs.getString(ACCOUNT_NO), rs.getString
+        (BANK_DETAIL), rs.getString(ADDRESS), rs.getString(DESCRIPTION))
     }
     vendorList
   }
@@ -97,7 +102,7 @@ class VendorController @Inject()(
 
   val deleteVendorForm = Form(mapping(VENDOR -> text)(VendorName.apply)(VendorName.unapply))
 
-  def deleteVendor() = SecuredAction(WithRole(Admin) ).async { implicit request =>
+  def deleteVendor() = SecuredAction(WithRole(Admin)).async { implicit request =>
     deleteVendorForm.bindFromRequest.fold(
       form => Future.successful(BadRequest(views.html.deleteVendor(getListVendors.toList, "wrong data", request.identity))),
       data => {
