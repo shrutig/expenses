@@ -106,13 +106,25 @@ class VendorController @Inject()(
     deleteVendorForm.bindFromRequest.fold(
       form => Future.successful(BadRequest(views.html.deleteVendor(getListVendors.toList, "wrong data", request.identity))),
       data => {
+        var flag = 0
         DB.withConnection { conn =>
-          val stmt = conn.prepareStatement(models.sqlStatement.VENDOR_STATE_4)
-          stmt.setString(1, data.name)
-          stmt.execute()
+          val stmt1 = conn.prepareStatement(models.sqlStatement.VENDOR_STATE_6)
+          stmt1.setString(1, data.name)
+          val rs = stmt1.executeQuery()
+          rs.next
+          if (rs.getInt(1) == 0) {
+            val stmt2 = conn.prepareStatement(models.sqlStatement.VENDOR_STATE_4)
+            stmt2.setString(1, data.name)
+            stmt2.execute()
+            flag = 1
+          }
         }
-        Future.successful(Ok(views.html.deleteVendor(getListVendors.toList, s"Vendor ${data.name} deleted", request
-          .identity)))
+        if (flag == 1)
+          Future.successful(Ok(views.html.deleteVendor(getListVendors.toList, s"Vendor ${data.name} deleted", request
+            .identity)))
+        else
+          Future.successful(Ok(views.html.deleteVendor(getListVendors.toList, s"Vendor ${data.name} cannot be deleted as " +
+            s"present in accepted, denied or under review transactions. Please complete those transactions first", request.identity)))
       }
     )
   }

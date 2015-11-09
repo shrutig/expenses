@@ -12,6 +12,7 @@ object sqlStatement {
   val VENDOR_STATE_3 = "select name from vendor;"
   val VENDOR_STATE_4 = "delete from vendor where name=?;"
   val VENDOR_STATE_5 = "select count(*) from vendor where name=?"
+  val VENDOR_STATE_6 = "select count(*) from expenses where vendor=? and (status<>'P');"
   val EMP_STATE_1 = "insert into employee values (?,?);"
   val EMP_STATE_2 = "select role from employee where userName=?"
   val EMP_STATE_3 = "update employee set role=? where userName=?;"
