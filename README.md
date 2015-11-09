@@ -29,7 +29,7 @@ The files 1.sql and 2.sql in conf directory have the database evolutions. In thi
 ##Project details
 This Play application is an Employee-Vendor Payee System.
  
-* It has the capability of allowing login for user, admin or super admin. 
+* It has the capability of allowing login for user, admin or super admin using google sign-in.
 * Any user can add a payment to the possible vendors. 
 * A super admin has the capability of changing role of an employee or adding or removing a vendor, or approving or 
 denying transactions. 
