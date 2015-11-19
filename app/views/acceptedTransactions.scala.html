@@ -4,6 +4,7 @@
 
 <h1>Accepted Transactions</h1>
 @message
+<div style="overflow-x:scroll">
 <table class="table table-condensed">
     <thead>
     <tr>
@@ -35,5 +36,6 @@
         }
 
 </table>
+</div>
 <a href="@routes.PaymentController.getFile">Download CSV of Accepted Payments</a>
 }

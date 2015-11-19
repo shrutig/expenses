@@ -3,31 +3,33 @@
 @main(Messages("home.title"), Some(user)) {
 
 <h1>Processed Transactions</h1>
-<table class="table table-condensed">
+<div style="overflow-x:scroll">
+<table class="table table-condensed " style="overflow-x:scroll">
     <thead>
     <tr>
-        <div class="row">
-        <th class="col-md-2">PayID</th>
-        <th class="col-md-2">Employee</th>
-        <th class="col-md-2">Vendor</th>
-        <th class="col-md-2">Amount</th>
-        <th class="col-md-2">Description</th>
-        <th  class="col-md-2"></th>
-        </div>
+
+        <th>PayID</th>
+        <th>Employee</th>
+        <th>Vendor</th>
+        <th>Amount</th>
+        <th>Description</th>
+        <th></th>
+
     </tr>
     </thead>
     @for(index <- 0 until transactionList.size){
     <tr>
-        <div class="row">
-        <td class="col-md-2">@transactionList(index).id</td>
-        <td class="col-md-2">@transactionList(index).userName</td>
-        <td class="col-md-2">@transactionList(index).vendor</td>
-        <td class="col-md-2">@transactionList(index).amount</td>
-        <td class="col-md-2">@transactionList(index).description</td>
-        <td class="col-md-2"><a href ="@routes.PaymentController.getReceipt(transactionList(index).fileName)">Receipt
+
+        <td>@transactionList(index).id</td>
+        <td>@transactionList(index).userName</td>
+        <td>@transactionList(index).vendor</td>
+        <td>@transactionList(index).amount</td>
+        <td>@transactionList(index).description</td>
+        <td><a href ="@routes.PaymentController.getReceipt(transactionList(index).fileName)">Receipt
         </a></td>
-        </div>
+
         }
 
 </table>
+</div>
 }
