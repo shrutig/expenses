@@ -8,7 +8,7 @@
     @helper.form(action = routes.VendorController.deleteVendor()) {
     @helper.CSRF.formField
     <div class="form-group">
-        <div class="col-xs-3">
+        <div class="col-xs-6">
             <label>Select Vendor</label>
             <select name="vendor" class="form-control">
                 @for(index<-0 until vendorList.size){
@@ -24,27 +24,27 @@
 }
 </p>
 <br />
-<table class="table table-condensed">
+<table class="table table-condensed ">
 
     <thead>
 
     <tr>
-        <th>Vendor Name</th>
-        <th>Phone</th>
-        <th>Account No</th>
-        <th>Bank Details</th>
-        <th>Address</th>
-        <th>Description</th>
+        <th class="col-xs-2">Vendor Name</th>
+        <th class="col-xs-2">Phone</th>
+        <th class="col-xs-2">Account No</th>
+        <th class="col-xs-2">Bank Details</th>
+        <th class="col-xs-2">Address</th>
+        <th class="col-xs-2">Description</th>
     </tr>
     </thead>
     @for(index <- 0 until vendorList.size){
     <tr>
-        <td>@vendorList(index).name</td>
-        <td>@vendorList(index).phone</td>
-        <td>@vendorList(index).accountNo</td>
-        <td>@vendorList(index).bankDetail</td>
-        <td>@vendorList(index).address</td>
-        <td>@vendorList(index).description</td>
+        <td class="col-xs-2">@vendorList(index).name</td>
+        <td class="col-xs-2">@vendorList(index).phone</td>
+        <td class="col-xs-2">@vendorList(index).accountNo</td>
+        <td class="col-xs-2">@vendorList(index).bankDetail</td>
+        <td class="col-xs-2">@vendorList(index).address</td>
+        <td class="col-xs-2">@vendorList(index).description</td>
     </tr>
     }
 </table>

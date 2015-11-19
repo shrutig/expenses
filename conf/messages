@@ -9,7 +9,7 @@ home.title = EVPay System
 sign.up.title = EVPay System - Sign Up
 sign.in.title = EVPay System- Sign In
 
-toggle.navigation = Toggle navigation
+toggle.navigation = Menu
 welcome.signed.in = Welcome, you are now signed in!
 
 sign.up.account = Sign up for a new account

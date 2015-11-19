@@ -6,7 +6,7 @@
     @helper.form(action = routes.PaymentController.addTransaction()) {
     @helper.CSRF.formField
     <div class="form-group">
-        <div class="col-xs-3">
+        <div class="col-xs-6">
             <label>Select Vendor</label>
             <select name="vendor" class="form-control">
                 @for(index<-0 until vendorList.size){
